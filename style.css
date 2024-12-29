@@ -1,17 +1,60 @@
-*{
-	margin: 0;
-	padding: 0;
-	font-family: 'poppins', sans-serif;
-	box-sizing: border-box;
-}
-html{
-	scroll-behavior: smooth;
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Lora', serif; /* Default body font */
 }
 
-body{
-	background: #080808;
-	color: #fff;
+body {
+  background: #0a0a0a;
+  color: #fff;
+  line-height: 1.6;
 }
+
+h1, h2, h3, .sub-title, .header-text h1 {
+  font-family: 'Poppins', sans-serif; /* Font for headings */
+  font-weight: 700;
+}
+
+p, li {
+  font-family: 'Lora', serif; /* Font for body text */
+}
+
+.tab-links, .btn {
+  font-family: 'Poppins', sans-serif; /* Buttons and tabs */
+  font-weight: 500;
+}
+
+.header-text {
+  text-align: center;
+}
+
+.header-text h1 {
+  font-size: 3rem;
+}
+
+.header-text p {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+}
+
+.tab-titles p {
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.tab-titles p.active-link {
+  color: #ff004f;
+}
+
+.tab-contents ul li {
+  margin: 10px 0;
+  font-size: 1rem;
+}
+
 #header{
 	width: 100%;
 	height:100vh;
@@ -174,92 +217,77 @@ nav ul li a:hover::after{
 	padding: 50px 0;
 }
 
-.work-list{
+.work-list {
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
-	grid-gap: 40px;
-	margin-top: 50px;
-}
-
-.work{
-	height: 500px;
-	width: 500px;
-	padding: 20px;
-	border-radius: 10px;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	gap: 20px; /* Space between grid items */
+	margin-top: 30px;
+  }
+  
+  .work {
 	position: relative;
+	border-radius: 10px;
 	overflow: hidden;
-}
-
-.work img{
+	transition: transform 0.3s ease-in-out;
+  }
+  
+  .work img {
 	width: 100%;
 	height: 100%;
+	object-fit: cover; /* Ensures the image covers the entire grid item */
 	border-radius: 10px;
-	display: block;
-	background-size: cover;
-	transition: transform 0.5s;
-}
-.heading{
-	color: #ff004f;
-}
-.container2{
-	padding: 10px 10%;
-}
-.layer{
-	width: 100%;
-	height: 0%;
-	background: linear-gradient(rgba(0,0,0,0.5),#ff004f);
-	border-radius: 10px;
+	transition: transform 0.3s ease;
+  }
+  
+  .work:hover img {
+	transform: scale(1.05); /* Slight zoom effect on hover */
+  }
+  
+  /* Hide the text overlay initially */
+  .layer {
 	position: absolute;
+	top: 0;
 	left: 0;
-	bottom: 0;
-	overflow: hidden;
+	width: 100%;
+	height: 100%; /* Ensure it covers the entire image */
+	background: rgba(0, 0, 0, 0.7);
+	color: #fff;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	flex-direction: column;
-	padding: 0 40px;
 	text-align: center;
-	font-size: 14px;
-	transition: height 0.5s;
-}
-
-.layer h3{
-	font-weight: 500;
-	margin-bottom: 20px;
-}
-
-.layer a{
-	margin-top: 20px;
-	color: #0ff04f;
+	border-radius: 10px;
+	opacity: 0; /* Fully transparent */
+	visibility: hidden; /* Not visible */
+	transition: opacity 0.3s ease, visibility 0.3s ease;
+  }
+  
+  .work:hover .layer {
+	opacity: 1; /* Fully opaque */
+	visibility: visible; /* Visible */
+  }
+  
+  .layer h3 {
+	font-size: 1.5rem;
+	margin-bottom: 10px;
+  }
+  
+  .layer p {
+	font-size: 1rem;
+	margin-bottom: 15px;
+  }
+  
+  .layer a {
+	color: #ff004f;
+	font-size: 1.2rem;
 	text-decoration: none;
-	font-size: 18px;
-	line-height: 60px;
-	background: #fff;
-	width: 60px;
-	height: 60px;
-	border-radius: 50%;
-	text-align: center;
-}
-
-.layer a{
-	margin-top: 20px;
-	color: #0ff04f;
-	text-decoration: none;
-	font-size: 18px;
-	line-height: 60px;
-	background: #fff;
-	width: 60px;
-	height: 60px;
-	border-radius: 50%;
-	text-align: center;
-}
-.work:hover img{
-	transform: scale(1.1);
-}
-
-.work:hover .layer{
-	height: 100%;
-}
+  }
+  
+  .work:hover .layer {
+	height: 100%; /* Show the overlay on hover */
+  }
+  
 
 .btn{
 	display: block;
@@ -278,6 +306,89 @@ nav ul li a:hover::after{
 
 }
 
+#youtube-preview {
+    text-align: center;
+    margin-top: 50px;
+    padding: 20px 40px; /* Padding on both sides of the page */
+    background: #1a1a1a; /* Black background */
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(255, 0, 0, 0.4); /* Red shadow */
+}
+
+#youtube-preview .heading {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2rem; /* Slightly larger heading */
+    color: #ff0000; /* Red text */
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+}
+
+.youtube-row {
+    display: flex;
+    justify-content: center; /* Center-align videos horizontally */
+    flex-wrap: wrap; /* Stack videos on smaller screens */
+    gap: 30px; /* Adds spacing between columns */
+    margin: 0 auto; /* Center the row container */
+    max-width: 1200px; /* Limit the width of the row */
+    padding: 0 20px; /* Add padding inside the row */
+}
+
+.youtube-container {
+    flex: 1 1 calc(33.33% - 40px); /* 3 columns, adjust for padding */
+    max-width: 400px; /* Increase the maximum width for videos */
+    aspect-ratio: 16 / 9; /* Maintains 16:9 aspect ratio */
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(255, 0, 0, 0.6); /* Red shadow for video */
+    background: #000;
+}
+
+.youtube-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+
+
+.container2 {
+	padding: 20px 10%; /* Adds space inside the container */
+	margin: 40px auto; /* Adds space outside the container */
+	background: #1a1a1a; /* Optional: Add a background color for better separation */
+	border-radius: 10px; /* Optional: Add rounded corners */
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Optional: Add a subtle shadow */
+  }
+  
+  .container2 h1 {
+	text-align: center;
+	margin-bottom: 20px;
+	color: #ff004f; /* Accent color for headings */
+  }
+  
+  .container2 h3 {
+	margin-top: 20px;
+	margin-bottom: 10px;
+	font-size: 1.5rem;
+	color: #fff;
+  }
+  
+  .container2 p {
+	margin-bottom: 15px;
+	line-height: 1.6;
+	color: #ababab;
+  }
+  
+  .container2 a {
+	color: #ff004f;
+	text-decoration: none;
+	transition: color 0.3s;
+  }
+  
+  .container2 a:hover {
+	color: #e00045;
+  }
+
+  
 /* contact */
 
 .contact-left{
