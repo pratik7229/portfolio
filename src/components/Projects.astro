@@ -1,0 +1,524 @@
+---
+// src/components/Projects.astro
+
+const projectCategories = [
+  {
+    id: "climbing",
+    title: "Climbing Robots",
+    subtitle: "Vertical Inspection Systems",
+    video: "/CB_robot.mp4", 
+    icon: "🧗‍♂️",
+    subProjects: [
+      {
+        id: "ironman",
+        name: "IronMan",
+        tagline: "Bipedal Magnetic Climber",
+        description: "A biologically inspired bipedal climbing robot designed for complex steel bridge inspection. The system utilizes a custom gait generation algorithm to transition between flat and vertical surfaces without external support.",
+        impact: ["Zero-radius turning capability", "15kg Vertical Payload", "Custom PCB Mainboard"],
+        tech: ["STM32 Firmware", "Inverse Kinematics", "SolidWorks", "KiCad"]
+      },
+      {
+        id: "spidey",
+        name: "Spidey",
+        tagline: "Multi-Limbed Inspection Bot",
+        description: "Quadruped climbing robot capable of transitioning between floor and wall surfaces using nonlinear model predictive control (NMPC) for stability on vertical planes.",
+        impact: ["Real-time NMPC @ 100Hz", "Omnidirectional Movement", "Adhesion Redundancy"],
+        tech: ["ROS 2 Humble", "Gait Analysis", "Fusion 360", "C++"]
+      },
+      {
+        id: "morpho",
+        name: "Morpho Climber",
+        tagline: "Shape-Shifting Platform",
+        description: "A modular climbing robot with compliant joints allowing it to navigate over irregular weld beads and rivets on industrial tanks by altering its chassis geometry.",
+        impact: ["Traverses 20mm Obstacles", "Adaptive Adhesion", "Modular Design"],
+        tech: ["Soft Robotics", "Adaptive Control", "Python"]
+      }
+    ]
+  },
+  {
+    id: "aerial",
+    title: "Aerial Robots",
+    subtitle: "UAVs & Flight Control",
+    video: "/aerial.mp4",
+    icon: "🚁",
+    subProjects: [
+      {
+        id: "fc",
+        name: "Custom Flight Controller",
+        tagline: "Hardware & Firmware from Scratch",
+        description: "Designed and manufactured a custom Flight Controller PCB based on STM32H7. Wrote the attitude estimation (EKF) and PID control loops from scratch in C++ without using Ardupilot libraries.",
+        impact: ["4-Layer PCB Design", "400Hz Loop Frequency", "< 2 deg Drift"],
+        tech: ["Altium Designer", "Embedded C++", "Control Theory", "EKF Design"]
+      },
+      {
+        id: "cube",
+        name: "Cube Drone",
+        tagline: "Omnidirectional UAV",
+        description: "A unique cubic drone frame design allowing for 6-DOF movement, optimized for inspecting tight indoor spaces where traditional drones cannot rotate safely.",
+        impact: ["6-DOF Independence", "Collision Tolerant Frame", "Indoor Stabilization"],
+        tech: ["Generative Design", "Betaflight", "3D Printing", "Carbon Fiber"]
+      }
+    ]
+  },
+  {
+    id: "mobile",
+    title: "Mobile Robots",
+    subtitle: "UGVs & Navigation",
+    video: "/mobile.mp4",
+    icon: "🚗",
+    subProjects: [
+      {
+        id: "culvert",
+        name: "Culvert Inspector",
+        tagline: "Confined Space Explorer",
+        description: "An amphibious rover designed to inspect drainage culverts. Features a waterproof chassis and SLAM-based navigation for GPS-denied environments.",
+        impact: ["IP67 Waterproofing", "Lidar-Inertial Odometry", "2 Hours Runtime"],
+        tech: ["LiDAR SLAM", "Jetson Nano", "Path Planning", "System Integration"]
+      }
+    ]
+  },
+  {
+    id: "ai",
+    title: "AI & Deep Learning",
+    subtitle: "Perception Systems",
+    video: "/ai.mp4",
+    icon: "🧠",
+    subProjects: [
+      {
+        id: "dl-repo",
+        name: "Deep Learning Projects",
+        tagline: "Computer Vision Repository",
+        description: "A collection of advanced models including YOLOv8 for defect detection, crack segmentation, and reinforcement learning agents for navigation.",
+        impact: ["98.5% Detection Accuracy", "Real-time Inference", "Custom Dataset"],
+        tech: ["PyTorch", "TensorFlow", "Computer Vision", "CUDA"]
+      }
+    ]
+  }
+];
+---
+
+<section id="projects" class="projects-section">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Engineering Portfolio</h2>
+      <p class="section-subtitle">Select a domain to explore technical breakdowns and key engineering achievements.</p>
+      <div class="title-line"></div>
+    </div>
+
+    <div class="cards-grid" id="mainGrid">
+      {projectCategories.map((category) => (
+        <div class="category-card" data-category={category.id}>
+          <div class="video-wrapper">
+            <video 
+              autoplay 
+              muted 
+              loop 
+              playsinline 
+              class="card-video"
+              poster="/erdc .png" 
+            >
+              <source src={category.video} type="video/mp4" />
+            </video>
+            <div class="video-overlay"></div>
+          </div>
+          <div class="card-content">
+            <div class="card-icon">{category.icon}</div>
+            <h3>{category.title}</h3>
+            <p>{category.subtitle}</p>
+            <span class="explore-btn">Explore Projects &rarr;</span>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <div class="project-modal" id="projectModal">
+      <div class="modal-backdrop"></div> 
+      
+      <button class="close-modal-btn" aria-label="Close details">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+      
+      <div class="modal-content">
+        
+        <div class="modal-bg-wrapper">
+           <video id="modalBgVideo" loop muted playsinline class="modal-bg-video"></video>
+           <div class="modal-bg-gradient"></div>
+        </div>
+
+        <div class="modal-sidebar">
+          <div class="sidebar-header">
+            <h2 id="modalTitle">Category</h2>
+          </div>
+          <div class="sub-project-list" id="subProjectList">
+            </div>
+        </div>
+
+        <div class="modal-details">
+          <div class="detail-header">
+            <h3 id="detailName">Select a Project</h3>
+            <span class="detail-tagline" id="detailTagline"></span>
+          </div>
+          
+          <div class="detail-body">
+            <p id="detailDesc">Description goes here...</p>
+            
+            <div class="tech-section" id="detailTechContainer">
+               <h4>Technical Arsenal</h4>
+               <div class="tech-tags" id="detailTech"></div>
+            </div>
+
+            <div class="impact-section">
+                <h4>Key Engineering Achievements</h4>
+                <div class="impact-grid" id="impactGrid">
+                    </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<script define:vars={{ projectCategories }}>
+  window.projectData = projectCategories;
+</script>
+
+<style>
+  /* --- LAYOUT --- */
+  .projects-section {
+    padding: 6rem 0;
+    background: #0f1117;
+    position: relative;
+    min-height: 100vh;
+  }
+
+  .container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  .section-header { text-align: center; margin-bottom: 4rem; }
+  .section-title {
+    font-size: 3rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #fff 0%, #a5b4fc 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .section-subtitle { color: #94a3b8; margin-top: 1rem; }
+  .title-line {
+    width: 80px;
+    height: 4px;
+    background: #3b82f6;
+    margin: 1.5rem auto;
+    border-radius: 2px;
+  }
+
+  /* --- GRID --- */
+  .cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+
+  .category-card {
+    position: relative;
+    height: 450px;
+    border-radius: 1.5rem;
+    overflow: hidden;
+    cursor: pointer;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.4s ease;
+  }
+  .category-card:hover {
+    transform: translateY(-10px);
+    border-color: #3b82f6;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+  }
+
+  /* Video on Main Cards */
+  .video-wrapper {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%; z-index: 1;
+  }
+  .card-video {
+    width: 100%; height: 100%; object-fit: cover;
+    filter: brightness(0.6) grayscale(0.4); 
+    transition: filter 0.5s ease, transform 6s ease;
+  }
+  .category-card:hover .card-video {
+    filter: brightness(0.9) grayscale(0);
+    transform: scale(1.1);
+  }
+  .video-overlay {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(to top, rgba(15, 17, 23, 1) 0%, rgba(15, 17, 23, 0.2) 100%);
+  }
+
+  /* Card Content */
+  .card-content {
+    position: relative; z-index: 2; height: 100%;
+    display: flex; flex-direction: column; justify-content: flex-end; padding: 2rem;
+  }
+  .card-icon {
+    font-size: 3rem; margin-bottom: 1rem;
+    transform: translateY(20px); opacity: 0; transition: all 0.4s ease;
+  }
+  .category-card:hover .card-icon { transform: translateY(0); opacity: 1; }
+  .card-content h3 { font-size: 2rem; color: white; margin: 0; font-weight: 700; }
+  .card-content p { color: #cbd5e1; font-size: 1rem; margin-top: 0.5rem; }
+  .explore-btn {
+    margin-top: 1.5rem; color: #3b82f6; font-weight: 600;
+    opacity: 0; transform: translateX(-20px); transition: all 0.4s ease;
+  }
+  .category-card:hover .explore-btn { opacity: 1; transform: translateX(0); }
+
+  /* --- MODAL --- */
+  .project-modal {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    z-index: 1000; opacity: 0; pointer-events: none; transition: opacity 0.3s ease;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .project-modal.active { opacity: 1; pointer-events: all; }
+  
+  .modal-backdrop {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(8px);
+    z-index: 1;
+  }
+
+  .close-modal-btn {
+    position: absolute; top: 2rem; right: 2rem; z-index: 10;
+    background: rgba(255, 255, 255, 0.1); border: none; color: white;
+    width: 50px; height: 50px; border-radius: 50%; cursor: pointer;
+    display: flex; align-items: center; justify-content: center; transition: all 0.3s ease;
+  }
+  .close-modal-btn:hover { background: #ef4444; transform: rotate(90deg); }
+
+  .modal-content {
+    position: relative; z-index: 2;
+    width: 90%; max-width: 1200px; height: 85vh;
+    background: #151726; border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 1.5rem; display: grid; grid-template-columns: 300px 1fr;
+    overflow: hidden; box-shadow: 0 50px 100px rgba(0,0,0,0.5);
+  }
+
+  /* MODAL BACKGROUND VIDEO (UPDATED) */
+  .modal-bg-wrapper {
+    position: absolute;
+    top: 0; right: 0; bottom: 0;
+    width: 70%; /* Covers more area */
+    z-index: 0;
+    overflow: hidden;
+    pointer-events: none;
+  }
+
+  .modal-bg-video {
+    width: 100%; height: 100%; object-fit: cover;
+    opacity: 0.8; /* HIGH VISIBILITY */
+    filter: brightness(1.0); /* Full brightness */
+  }
+
+  .modal-bg-gradient {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    /* Gradient mask: Solid dark on left, fading to transparent on right */
+    background: linear-gradient(to right, #151726 15%, rgba(21, 23, 38, 0.9) 45%, rgba(21, 23, 38, 0.2) 100%);
+  }
+
+  /* SIDEBAR */
+  .modal-sidebar {
+    background: rgba(0, 0, 0, 0.3); padding: 2rem;
+    border-right: 1px solid rgba(255, 255, 255, 0.05);
+    display: flex; flex-direction: column;
+    position: relative; z-index: 2;
+  }
+  .sidebar-header h2 {
+    color: white; font-size: 1.5rem; margin-bottom: 2rem;
+    padding-bottom: 1rem; border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .sub-project-list {
+    flex: 1; display: flex; flex-direction: column; gap: 0.8rem; overflow-y: auto;
+  }
+
+  .sub-proj-btn {
+    background: transparent; border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 1rem; text-align: left; color: #94a3b8; border-radius: 0.75rem;
+    cursor: pointer; transition: all 0.3s ease; position: relative; overflow: hidden;
+  }
+  .sub-proj-btn:hover {
+    background: rgba(255, 255, 255, 0.08); color: white; transform: translateX(5px);
+  }
+  .sub-proj-btn.active {
+    background: linear-gradient(90deg, rgba(59, 130, 246, 0.2) 0%, rgba(37, 99, 235, 0.1) 100%);
+    border-color: #3b82f6; color: white; box-shadow: 0 4px 20px rgba(59, 130, 246, 0.2);
+  }
+  .sub-proj-btn.active::before {
+    content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 4px; background: #3b82f6;
+  }
+  .sub-proj-name { display: block; font-weight: 700; font-size: 1rem; }
+  .sub-proj-tag { font-size: 0.75rem; opacity: 0.7; }
+
+  /* DETAILS AREA */
+  .modal-details { 
+    padding: 3rem; 
+    overflow-y: auto; 
+    position: relative; z-index: 2;
+    background: transparent;
+  }
+  
+  .detail-header { margin-bottom: 2rem; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 1rem; }
+  .detail-header h3 { font-size: 2.5rem; color: white; margin-bottom: 0.5rem; text-shadow: 0 2px 10px rgba(0,0,0,0.8); }
+  .detail-tagline { font-size: 1.2rem; color: #60a5fa; font-family: monospace; font-weight: 600; text-shadow: 0 2px 4px rgba(0,0,0,0.8); }
+  
+  .detail-body p { color: #f1f5f9; font-size: 1.1rem; line-height: 1.7; margin-bottom: 2.5rem; max-width: 90%; text-shadow: 0 1px 3px rgba(0,0,0,0.9); }
+
+  /* Tech Stack */
+  .tech-section h4, .impact-section h4 { 
+    color: #cbd5e1; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1rem; text-shadow: 0 1px 2px rgba(0,0,0,0.8);
+  }
+  .tech-tags { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 3rem; }
+  .detail-tech-item {
+    background: rgba(16, 185, 129, 0.15); color: #6ee7b7; padding: 0.5rem 1rem;
+    border-radius: 4px; font-size: 0.85rem; border: 1px solid rgba(16, 185, 129, 0.3);
+    font-weight: 500;
+    backdrop-filter: blur(10px);
+  }
+
+  /* Impact Grid */
+  .impact-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 3rem;
+  }
+  .impact-card {
+    background: rgba(0,0,0,0.4); border: 1px solid rgba(255,255,255,0.15);
+    padding: 1rem; border-radius: 0.75rem; display: flex; align-items: center; gap: 0.75rem;
+    backdrop-filter: blur(10px);
+  }
+  .impact-icon { color: #f59e0b; font-size: 1.2rem; }
+  .impact-text { color: #f8fafc; font-weight: 600; font-size: 0.95rem; }
+
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    .modal-content { grid-template-columns: 1fr; grid-template-rows: auto 1fr; height: 95vh; }
+    .modal-sidebar { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.1); padding: 1rem; max-height: 25vh; }
+    .modal-details { padding: 1.5rem; }
+    .section-title { font-size: 2rem; }
+    /* Hide video on mobile to save performance */
+    .modal-bg-wrapper { display: none; }
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const cards = document.querySelectorAll('.category-card');
+    const modal = document.getElementById('projectModal');
+    const backdrop = document.querySelector('.modal-backdrop');
+    const closeModalBtn = document.querySelector('.close-modal-btn');
+    
+    const modalTitle = document.getElementById('modalTitle');
+    const subProjectList = document.getElementById('subProjectList');
+    const modalBgVideo = document.getElementById('modalBgVideo');
+    
+    const detailName = document.getElementById('detailName');
+    const detailTagline = document.getElementById('detailTagline');
+    const detailDesc = document.getElementById('detailDesc');
+    const detailTech = document.getElementById('detailTech');
+    const impactGrid = document.getElementById('impactGrid');
+    
+    const data = window.projectData;
+
+    function openModal(categoryId) {
+      const category = data.find(c => c.id === categoryId);
+      if(!category) return;
+
+      modalTitle.textContent = category.title;
+      subProjectList.innerHTML = '';
+
+      if (modalBgVideo) {
+        modalBgVideo.src = category.video;
+        modalBgVideo.play();
+      }
+
+      category.subProjects.forEach((sub, index) => {
+        const btn = document.createElement('button');
+        btn.className = `sub-proj-btn ${index === 0 ? 'active' : ''}`;
+        btn.innerHTML = `
+          <span class="sub-proj-name">${sub.name}</span>
+          <span class="sub-proj-tag">${sub.tagline}</span>
+        `;
+        btn.onclick = () => loadSubProject(sub, btn);
+        subProjectList.appendChild(btn);
+      });
+
+      loadSubProject(category.subProjects[0]);
+
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function loadSubProject(sub, activeBtn) {
+      if(activeBtn) {
+        document.querySelectorAll('.sub-proj-btn').forEach(b => b.classList.remove('active'));
+        activeBtn.classList.add('active');
+      }
+
+      const detailBody = document.querySelector('.detail-body');
+      detailBody.style.opacity = '0';
+      detailBody.style.transform = 'translateY(10px)';
+      detailBody.style.transition = 'all 0.3s ease';
+
+      setTimeout(() => {
+        detailName.textContent = sub.name;
+        detailTagline.textContent = sub.tagline;
+        detailDesc.textContent = sub.description;
+        
+        detailTech.innerHTML = '';
+        sub.tech.forEach(t => {
+          const span = document.createElement('span');
+          span.className = 'detail-tech-item';
+          span.textContent = t;
+          detailTech.appendChild(span);
+        });
+
+        impactGrid.innerHTML = '';
+        if(sub.impact) {
+             sub.impact.forEach(imp => {
+                const div = document.createElement('div');
+                div.className = 'impact-card';
+                div.innerHTML = `<span class="impact-icon">⚡</span><span class="impact-text">${imp}</span>`;
+                impactGrid.appendChild(div);
+             });
+        }
+
+        detailBody.style.opacity = '1';
+        detailBody.style.transform = 'translateY(0)';
+      }, 200);
+    }
+
+    function closeModal() {
+      modal.classList.remove('active');
+      document.body.style.overflow = '';
+      if (modalBgVideo) modalBgVideo.pause();
+    }
+
+    cards.forEach(card => {
+      card.addEventListener('click', () => {
+        const catId = card.getAttribute('data-category');
+        openModal(catId);
+      });
+    });
+
+    backdrop.addEventListener('click', closeModal);
+    closeModalBtn.addEventListener('click', closeModal);
+
+    document.addEventListener('keydown', (e) => {
+      if(e.key === 'Escape' && modal.classList.contains('active')) {
+        closeModal();
+      }
+    });
+  });
+</script>

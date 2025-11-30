@@ -1,0 +1,465 @@
+---
+// src/components/Hero.astro
+---
+
+<section class="hero">
+  <!-- Video Background -->
+  <div class="video-background">
+    <video class="background-video" autoplay muted playsinline>
+      <source src="/video.mp4" type="video/mp4">
+      <source src="/video.webm" type="video/webm">
+      <img src="/erdc .png" alt="Robotics background" />
+    </video>
+    <div class="video-blend"></div>
+  </div>
+  
+  <!-- Content -->
+  <div class="hero-container">
+    <div class="hero-content">
+      <h2 class="hero-title">Build Robots That Think, Climb and Inspect</h2>
+      <p class="hero-subtitle">Developing AI-driven robotic solutions that automate complex inspection, navigation, and decision-making tasks.</p>
+      <div class="hero-actions">
+        <a href="#projects" class="btn btn-primary">View My Work</a>
+        <a href="/resume.pdf" download="Pratik_Walunj_Resume.pdf" class="btn btn-outline">Download Resume</a>
+      </div>
+      
+      <!-- Social Links -->
+      <div class="social-links">
+        <a href="https://github.com/pratik7229" target="_blank" rel="noopener noreferrer" class="social-link">
+          <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+          </svg>
+          <span>GitHub</span>
+        </a>
+        
+        <a href="https://scholar.google.com/citations?user=iExhIXwAAAAJ&hl=en" target="_blank" rel="noopener noreferrer" class="social-link">
+          <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M10.93 2.045c-.547.366-3.22 2.14-5.938 3.945C2.272 7.794.05 9.286.05 9.304c0 .019.136.11.305.2.167.096 2.85 1.583 5.965 3.31 3.117 1.727 5.767 3.152 5.888 3.17.124.019.294-.029.45-.124.168-.096 2.844-1.577 5.956-3.295 3.115-1.72 5.762-3.146 5.885-3.165.122-.018-.62-.577-2.63-2.068-1.576-1.159-2.938-2.128-3.027-2.156-.122-.037-.306-.018-.426.037-.091.037-1.662 1.078-3.492 2.316-1.83 1.235-3.36 2.25-3.403 2.25-.041 0-1.572-1.015-3.402-2.25-1.83-1.238-3.4-2.279-3.491-2.316-.091-.055-.244-.074-.366-.037z"/>
+            <path d="M10.93 9.644c-.547.366-3.22 2.14-5.938 3.945C2.272 15.393.05 16.885.05 16.903c0 .019.136.11.305.2.167.096 2.85 1.583 5.965 3.31 3.117 1.727 5.767 3.152 5.888 3.17.124.019.294-.029.45-.124.168-.096 2.844-1.577 5.956-3.295 3.115-1.72 5.762-3.146 5.885-3.165.122-.018-.62-.577-2.63-2.068-1.576-1.159-2.938-2.128-3.027-2.156-.122-.037-.306-.018-.426.037-.091.037-1.662 1.078-3.492 2.316-1.83 1.235-3.36 2.25-3.403 2.25-.041 0-1.572-1.015-3.402-2.25-1.83-1.238-3.4-2.279-3.491-2.316-.091-.055-.244-.074-.366-.037z"/>
+          </svg>
+          <span>Google Scholar</span>
+        </a>
+        
+        <a href="https://www.linkedin.com/in/pratik-walunj-060233193/" target="_blank" rel="noopener noreferrer" class="social-link">
+          <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+          </svg>
+          <span>LinkedIn</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background: #151726;
+    padding-top: 80px; /* For fixed header */
+  }
+
+  .video-background {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 70%;
+    height: 100%;
+    z-index: 1;
+  }
+
+  .background-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    filter: brightness(0.8) contrast(1.1);
+    transition: opacity 1s ease-in-out;
+  }
+
+  .video-blend {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 30%;
+    height: 100%;
+    background: linear-gradient(
+      to right,
+      rgba(21, 23, 38, 1) 0%,
+      rgba(21, 23, 38, 0.8) 50%,
+      transparent 100%
+    );
+  }
+
+  .hero-container {
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    width: 100%;
+  }
+
+  .hero-content {
+    max-width: 500px;
+    text-align: left;
+    margin: 0;
+  }
+
+  .hero-title {
+    font-size: clamp(2rem, 6vw, 3.5rem);
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(135deg, #ffffff 0%, #e2e8f0 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero-subtitle {
+    font-size: clamp(1.125rem, 3vw, 1.1rem);
+    color: #cbd5e1;
+    margin-bottom: 2.5rem;
+    line-height: 1.6;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 1rem 2rem;
+    border-radius: 0.75rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+    border: 2px solid transparent;
+    font-size: 1rem;
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+  }
+
+  .btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.6s ease;
+  }
+
+  .btn:hover::before {
+    left: 100%;
+  }
+
+  .btn-primary {
+    background: linear-gradient(135deg, var(--accent) 0%, #2563eb 50%, #8b5cf6 100%);
+    background-size: 200% 200%;
+    color: white;
+    border: 2px solid rgba(59, 130, 246, 0.5);
+    box-shadow: 
+      0 4px 15px rgba(59, 130, 246, 0.4),
+      0 0 0 1px rgba(255, 255, 255, 0.1) inset,
+      0 0 20px rgba(59, 130, 246, 0.2) inset;
+    animation: gradientShift 3s ease infinite;
+  }
+
+  .btn-primary:hover {
+    background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 50%, #7c3aed 100%);
+    background-size: 200% 200%;
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 
+      0 8px 25px rgba(59, 130, 246, 0.6),
+      0 0 0 1px rgba(255, 255, 255, 0.2) inset,
+      0 0 30px rgba(59, 130, 246, 0.3) inset;
+  }
+
+  .btn-outline {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 
+      0 4px 15px rgba(0, 0, 0, 0.2),
+      0 0 0 1px rgba(255, 255, 255, 0.1) inset;
+    position: relative;
+  }
+
+  .btn-outline::after {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.4), transparent, rgba(255, 255, 255, 0.4));
+    border-radius: 0.75rem;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .btn-outline:hover {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.08) 100%);
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 
+      0 8px 25px rgba(255, 255, 255, 0.2),
+      0 0 0 1px rgba(255, 255, 255, 0.3) inset;
+  }
+
+  .btn-outline:hover::after {
+    opacity: 1;
+  }
+
+  /* Download icon for resume button */
+  .btn-outline::before {
+    content: '📥';
+    font-size: 1.1em;
+  }
+
+  /* Social Links Styles */
+  .social-links {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .social-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #cbd5e1;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    padding: 0.5rem;
+    border-radius: 0.375rem;
+  }
+
+  .social-link:hover {
+    color: var(--accent);
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+  }
+
+  .social-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    transition: all 0.3s ease;
+  }
+
+  .social-link:hover .social-icon {
+    transform: scale(1.1);
+  }
+
+  .social-link span {
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+
+  /* Animations */
+  @keyframes gradientShift {
+    0%, 100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .video-background {
+      width: 100%;
+      right: 0;
+    }
+    
+    .video-blend {
+      width: 100%;
+      background: linear-gradient(
+        to bottom,
+        transparent 0%,
+        rgba(21, 23, 38, 0.8) 50%,
+        rgba(21, 23, 38, 1) 100%
+      );
+    }
+    
+    .hero-content {
+      max-width: 100%;
+      text-align: center;
+    }
+    
+    .hero-actions {
+      justify-content: center;
+    }
+    
+    .social-links {
+      justify-content: center;
+      gap: 1rem;
+    }
+    
+    .social-link span {
+      font-size: 0.8rem;
+    }
+
+    .btn {
+      padding: 0.875rem 1.5rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .hero {
+      min-height: 70vh;
+    }
+
+    .hero-title {
+      font-size: 1.5rem;
+    }
+
+    .hero-subtitle {
+      font-size: 1rem;
+    }
+    
+    .social-links {
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+    
+    .social-link {
+      padding: 0.375rem;
+    }
+
+    .hero-actions {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .btn {
+      width: 100%;
+      max-width: 250px;
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    // Video playlist functionality
+    const videoElement = document.querySelector('.background-video') as HTMLVideoElement | null;
+    const videoSources = [
+      { mp4: '/video.mp4', webm: '/video.webm' },
+      { mp4: '/video2.mp4', webm: '/video2.webm' },
+      { mp4: '/video3.mp4', webm: '/video3.webm' },
+      { mp4: '/video4.mp4', webm: '/video4.webm' }
+    ];
+    
+    let currentVideoIndex = 0;
+
+    function playNextVideo() {
+      if (!videoElement) return;
+      currentVideoIndex = (currentVideoIndex + 1) % videoSources.length;
+      const nextVideo = videoSources[currentVideoIndex];
+      
+      // Fade out current video
+      videoElement.style.opacity = '0';
+      
+      setTimeout(() => {
+        if (!videoElement) return;
+        // Change video source
+        videoElement.innerHTML = '';
+        
+        const mp4Source = document.createElement('source');
+        mp4Source.src = nextVideo.mp4;
+        mp4Source.type = 'video/mp4';
+        
+        const webmSource = document.createElement('source');
+        webmSource.src = nextVideo.webm;
+        webmSource.type = 'video/webm';
+        
+        // Fallback image
+        const fallbackImg = document.createElement('img');
+        fallbackImg.src = '/erdc .png';
+        fallbackImg.alt = 'Robotics background';
+        
+        videoElement.appendChild(mp4Source);
+        videoElement.appendChild(webmSource);
+        videoElement.appendChild(fallbackImg);
+        
+        // Fade in new video
+        try {
+          if (typeof videoElement.load === 'function') videoElement.load();
+          if (typeof videoElement.play === 'function') {
+            videoElement.play().catch(e => console.log('Video play failed:', e));
+          }
+        } catch (e) {
+          console.log('Error when loading/playing video:', e);
+        }
+        videoElement.style.opacity = '1';
+      }, 1000);
+    }
+
+    // Listen for video end and play next
+    if (videoElement) {
+      videoElement.addEventListener('ended', playNextVideo);
+      
+      // Also set up error handling
+      videoElement.addEventListener('error', (e) => {
+        console.log('Video error, playing next:', e);
+        setTimeout(playNextVideo, 2000);
+      });
+    }
+
+    // Smooth scroll for View My Work button
+    const viewWorkBtn = document.querySelector('a[href="#projects"]');
+    if (viewWorkBtn) {
+      viewWorkBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const projectsSection = document.querySelector('#projects') as HTMLElement | null;
+      if (projectsSection) {
+        const headerEl = document.querySelector('.header') as HTMLElement | null;
+        const headerHeight = headerEl?.offsetHeight ?? 80;
+
+        // Use getBoundingClientRect for an accurate position and subtract header height
+        const rect = projectsSection.getBoundingClientRect();
+        const targetPosition = rect.top + window.pageYOffset - headerHeight;
+
+        window.scrollTo({
+        top: Math.max(0, Math.round(targetPosition)),
+        behavior: 'smooth'
+        });
+      }
+      });
+    }
+
+    // Download resume button enhancement
+        const downloadBtn = document.querySelector('a[download]');
+        if (downloadBtn) {
+          downloadBtn.addEventListener('click', (e) => {
+            // Add download confirmation animation
+            const target = e.target as Element | null;
+            const btn = target?.closest('.btn') as HTMLElement | null;
+            if (btn) {
+              btn.style.transform = 'scale(0.95)';
+              setTimeout(() => {
+                btn.style.transform = '';
+              }, 150);
+            }
+          });
+        }
+  });
+</script>

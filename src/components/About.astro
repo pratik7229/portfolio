@@ -1,0 +1,2582 @@
+---
+// src/components/About.astro
+---
+
+<section id="about" class="about">
+  <div class="container">
+    <!-- Top Description -->
+    <div class="about-description">
+      <h2 class="section-title">About Me</h2>
+      <p class="description-text">
+        Hi, I'm <span class="highlight">Pratik Walunj</span> — a Robotics and AI Engineer passionate about creating autonomous systems that perform inspection, mapping, and decision-making in real-world environments. I specialize in building climbing robots for steel-structure inspection, integrating ROS, SLAM, AI-based sensing, and embedded control systems. My work bridges mechanical design, embedded electronics, and intelligent perception to make robots more capable and adaptive.
+      </p>
+    </div>
+
+    <!-- Main Content Grid -->
+    <div class="about-main-grid">
+      <!-- Left Column -->
+      <div class="about-left">
+        <div class="profile-card">
+          <!-- Profile Image -->
+          <div class="image-container">
+            <img src="/myimg1.jpg" alt="Pratik Waluni - Robotics Engineer" class="profile-image" />
+            <div class="image-glow"></div>
+          </div>
+          
+          <!-- Current Position with Logo -->
+          <div class="current-position">
+            <div class="position-badge">
+              <div class="logo-container">
+                <img src="/unr.png" alt="University of Nevada, Reno" class="university-logo" />
+                <div class="logo-blend-overlay"></div>
+                <div class="logo-text-overlay">
+                  <span class="blend-text">UNR</span>
+                </div>
+              </div>
+              <div class="position-info">
+                <h3>Current Position</h3>
+                <p>Graduate Research Assistant</p>
+                <span>University of Nevada, Reno</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Enhanced Animated Stats -->
+          <div class="stats-container">
+            <div class="stat-item">
+              <div class="stat-circle">
+                <svg class="stat-progress" viewBox="0 0 100 100">
+                  <circle class="progress-bg" cx="50" cy="50" r="45"></circle>
+                  <circle class="progress-fill" cx="50" cy="50" r="45" data-percentage="100"></circle>
+                </svg>
+                <div class="stat-number" data-target="4">0</div>
+                <div class="stat-plus">+</div>
+              </div>
+              <div class="stat-label">Years Experience</div>
+            </div>
+
+            <div class="stat-item">
+              <div class="stat-circle">
+                <svg class="stat-progress" viewBox="0 0 100 100">
+                  <circle class="progress-bg" cx="50" cy="50" r="45"></circle>
+                  <circle class="progress-fill" cx="50" cy="50" r="45" data-percentage="100"></circle>
+                </svg>
+                <div class="stat-number" data-target="50">0</div>
+                <div class="stat-plus">+</div>
+              </div>
+              <div class="stat-label">Certifications</div>
+            </div>
+
+            <div class="stat-item">
+              <div class="stat-circle">
+                <svg class="stat-progress" viewBox="0 0 100 100">
+                  <circle class="progress-bg" cx="50" cy="50" r="45"></circle>
+                  <circle class="progress-fill" cx="50" cy="50" r="45" data-percentage="100"></circle>
+                </svg>
+                <div class="stat-number" data-target="30">0</div>
+                <div class="stat-plus">+</div>
+              </div>
+              <div class="stat-label">Projects</div>
+            </div>
+
+            <div class="stat-item">
+              <div class="stat-circle">
+                <svg class="stat-progress" viewBox="0 0 100 100">
+                  <circle class="progress-bg" cx="50" cy="50" r="45"></circle>
+                  <circle class="progress-fill" cx="50" cy="50" r="45" data-percentage="100"></circle>
+                </svg>
+                <div class="stat-number" data-target="4">0</div>
+                <div class="stat-plus">+</div>
+              </div>
+              <div class="stat-label">Research Papers</div>
+            </div>
+
+            <div class="stat-item">
+              <div class="stat-circle">
+                <svg class="stat-progress" viewBox="0 0 100 100">
+                  <circle class="progress-bg" cx="50" cy="50" r="45"></circle>
+                  <circle class="progress-fill" cx="50" cy="50" r="45" data-percentage="100"></circle>
+                </svg>
+                <div class="stat-number" data-target="25">0</div>
+                <div class="stat-plus">+</div>
+              </div>
+              <div class="stat-label">Technologies</div>
+            </div>
+
+            <div class="stat-item">
+              <div class="stat-circle">
+                <svg class="stat-progress" viewBox="0 0 100 100">
+                  <circle class="progress-bg" cx="50" cy="50" r="45"></circle>
+                  <circle class="progress-fill" cx="50" cy="50" r="45" data-percentage="100"></circle>
+                </svg>
+                <div class="stat-number" data-target="8">0</div>
+                <div class="stat-plus">+</div>
+              </div>
+              <div class="stat-label">Awards</div>
+            </div>
+          </div>
+
+          <!-- Quick Contact Info -->
+          <div class="contact-mini">
+            <div class="contact-item">
+              <span class="contact-icon">📧</span>
+              <span class="contact-text">pratikwalunj7229@email.com</span>
+            </div>
+            <div class="contact-item">
+              <span class="contact-icon">📍</span>
+              <span class="contact-text">Reno, Nevada</span>
+            </div>
+            <div class="contact-item">
+              <span class="contact-icon">🕒</span>
+              <span class="contact-text">Available for Projects</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column -->
+      <div class="about-right">
+        <!-- Navigation Tabs -->
+        <div class="content-tabs">
+          <button class="tab-btn active" data-tab="experience">
+            <span class="tab-icon">💼</span>
+            Experience
+          </button>
+          <button class="tab-btn" data-tab="education">
+            <span class="tab-icon">🎓</span>
+            Education
+          </button>
+          <button class="tab-btn" data-tab="skills">
+            <span class="tab-icon">🛠️</span>
+            Skills
+          </button>
+          <button class="tab-btn" data-tab="certifications">
+            <span class="tab-icon">📜</span>
+            Certifications
+          </button>
+          <button class="tab-btn" data-tab="achievements">
+            <span class="tab-icon">🏆</span>
+            Achievements
+          </button>
+        </div>
+
+        <!-- Content Sections -->
+        <div class="tab-content">
+          <!-- Experience Tab -->
+          <div class="tab-pane active" id="experience-content">
+            <div class="experience-timeline">
+              <!-- Research Assistant - UNR -->
+              <div class="experience-item">
+                <div class="experience-header">
+                  <div class="experience-info">
+                    <h3 class="experience-title">Research Assistant</h3>
+                    <div class="experience-company">University of Nevada, Reno</div>
+                    <div class="experience-period">Oct 2023 - Present · 2 yrs 1 mo</div>
+                    <div class="experience-location">Reno, Nevada, United States</div>
+                  </div>
+                  <div class="company-logo">
+                    <div class="experience-logo-container">
+                      <img src="/unr.png" alt="University of Nevada, Reno" class="experience-logo" />
+                      <div class="experience-logo-blend"></div>
+                      <div class="experience-logo-text">
+                        <span class="experience-blend-text">UNR</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="experience-description">
+                  <p>Designed and prototyped all-terrain aerial drone capable of operating across air, water, ground, and wall surfaces for structural inspection.
+                    Engineered steel bridge–climbing robots for NASA and JFE Steel, integrating magnetic adhesion, ultrasonic thickness gauging, and autonomous control.
+                    Contributed to mechanical design, embedded systems, PCB development, and ROS-based software integration.</p>
+                  <div class="experience-skills">
+                    <span class="skill-tag">Ardupilot</span>
+                    <span class="skill-tag">ROS2</span>
+                    <span class="skill-tag">CAD design (Solidworks)</span>
+                    <span class="skill-tag">EasyEDA PCB design</span>
+                    <span class="skill-tag">+3 skill</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- DevOps Engineer - SAS -->
+              <div class="experience-item">
+                <div class="experience-header">
+                  <div class="experience-info">
+                    <h3 class="experience-title">DevOps Engineer</h3>
+                    <div class="experience-company">SAS · Full-time</div>
+                    <div class="experience-period">Jul 2022 – Aug 2023 · 1 yr 2 mos</div>
+                    <div class="experience-location">Pune, Maharashtra, India</div>
+                  </div>
+                  <div class="company-logo">
+                    <div class="experience-logo-container">
+                      <img src="/sas.png" alt="SAS" class="experience-logo" />
+                      <div class="experience-logo-blend"></div>
+                      <div class="experience-logo-text">
+                        <span class="experience-blend-text"></span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="experience-description">
+                  <p>Managed DevOps operations in Risk cloud infrastructure, focusing on securing sensitive credentials such as passwords, keys, and certificates used in automation workflows. Leveraged Azure Key Vault to automate and secure credential management.</p>
+                  <div class="experience-skills">
+                    <span class="skill-tag">Azure Key Vault</span>
+                    <span class="skill-tag">Shell Scripting</span>
+                    <span class="skill-tag">Docker</span>
+                    <span class="skill-tag">CI/CD</span>
+                    <span class="skill-tag">Git</span>
+                    <span class="skill-tag">Jenkins</span>
+                    <span class="skill-tag">+1 skill</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Project Intern - Parc Robotics -->
+              <div class="experience-item">
+                <div class="experience-header">
+                  <div class="experience-info">
+                    <h3 class="experience-title">Project Intern</h3>
+                    <div class="experience-company">Parc Robotics · Internship</div>
+                    <div class="experience-period">Aug 2019 – Feb 2020 · 7 mos</div>
+                    <div class="experience-location">Pune Area, India</div>
+                  </div>
+                  <div class="company-logo">
+                    <div class="experience-logo-container">
+                      <img src="/parc.png" alt="Parc Robotics" class="experience-logo" />
+                      <div class="experience-logo-blend"></div>
+                      <div class="experience-logo-text">
+                        <span class="experience-blend-text"></span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="experience-description">
+                  <p>As an intern, I worked on developing a six-axis robot for precise pick-and-place operations with a 2 kg payload capacity. The project aimed to design a cost-effective, easy-to-operate robot with accurate positioning and repeatability.</p>
+                  <div class="experience-skills">
+                    <span class="skill-tag">Teensy 4.0 Development Board</span>
+                    <span class="skill-tag">Robot Kinematics</span>
+                    <span class="skill-tag">PID Control</span>
+                    <span class="skill-tag">C++ Programming</span>
+                    <span class="skill-tag">Servo and Stepper Control</span>
+                    <span class="skill-tag">+1 skill</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Education Tab -->
+          <div class="tab-pane" id="education-content">
+            <div class="education-timeline">
+              <!-- UNR Education -->
+              <div class="education-item">
+                <div class="education-header">
+                  <div class="education-info">
+                    <h3 class="education-degree">Master's degree, Computer Science</h3>
+                    <div class="education-school">University of Nevada, Reno</div>
+                    <div class="education-period">Aug 2023 - Aug 2025</div>
+                    <div class="education-grade">Grade: 3.4 GPA</div>
+                  </div>
+                  <div class="education-logo">
+                    <div class="education-logo-container">
+                      <img src="/unr.png" alt="University of Nevada, Reno" class="education-logo-img" />
+                      <div class="education-logo-blend"></div>
+                      <div class="education-logo-text">
+                        <span class="education-blend-text">UNR</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- UNR Subjects -->
+                <div class="education-subjects">
+                  <h4 class="subjects-title">Core Subjects</h4>
+                  <div class="subjects-grid">
+                    <div class="subject-column">
+                      <div class="subject-item">
+                        <span class="subject-code">CS 682</span>
+                        <span class="subject-name">Artificial Intelligence</span>
+                        <span class="subject-status">In Progress</span>
+                      </div>
+                      <div class="subject-item">
+                        <span class="subject-code">CS 704</span>
+                        <span class="subject-name">Digital Forensics</span>
+                        <span class="subject-grade">A</span>
+                      </div>
+                      <div class="subject-item">
+                        <span class="subject-code">CPE 670</span>
+                        <span class="subject-name">Auto Mobile Robots</span>
+                        <span class="subject-grade">A</span>
+                      </div>
+                      <div class="subject-item">
+                        <span class="subject-code">CPE 671</span>
+                        <span class="subject-name">Advanced Robotics</span>
+                        <span class="subject-grade">A</span>
+                      </div>
+                      <div class="subject-item">
+                        <span class="subject-code">CS 791</span>
+                        <span class="subject-name">Robotics for Humanity</span>
+                        <span class="subject-grade">A</span>
+                      </div>
+                    </div>
+                    <div class="subject-column">
+                      <div class="subject-item">
+                        <span class="subject-code">CS 793</span>
+                        <span class="subject-name">Independent Study</span>
+                        <span class="subject-grade">A</span>
+                      </div>
+                      <div class="subject-item">
+                        <span class="subject-code">EE 671</span>
+                        <span class="subject-name">Control Systems II</span>
+                        <span class="subject-grade">B+</span>
+                      </div>
+                      <div class="subject-item">
+                        <span class="subject-code">CS 687</span>
+                        <span class="subject-name">Fundamentals of Deep Learning</span>
+                        <span class="subject-grade">B-</span>
+                      </div>
+
+                      <div class="subject-item">
+                        <span class="subject-code">CS 674</span>
+                        <span class="subject-name">Image Processing/Interpretation</span>
+                        <span class="subject-grade">B</span>
+                      </div>
+ 
+                      <div class="subject-item">
+                        <span class="subject-code">GRAD 778</span>
+                        <span class="subject-name">Research Computing</span>
+                        <span class="subject-grade">S</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- PCCOE Education -->
+              <div class="education-item">
+                <div class="education-header">
+                  <div class="education-info">
+                    <h3 class="education-degree">Bachelor's degree in Computer Science and Engineering</h3>
+                    <div class="education-school">Pimpri Chinchwad Education Trust's Pimpri Chinchwad College Of Engineering</div>
+                    <div class="education-period">2018 - 2022</div>
+                    <div class="education-grade">Grade: 9.1 CGPA</div>
+                  </div>
+                  <div class="education-logo">
+                    <div class="education-logo-container">
+                      <img src="/pccoe.png" alt="Pimpri Chinchwad College Of Engineering" class="education-logo-img" />
+                      <div class="education-logo-blend"></div>
+                      <div class="education-logo-text">
+                        <span class="education-blend-text">PCCOE</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- PCCOE Subjects -->
+                <div class="education-subjects">
+                  <h4 class="subjects-title">Core Subjects</h4>
+                  <div class="subjects-grid">
+                    <div class="subject-column">
+                      <div class="subject-item">
+                        <span class="subject-name">Data Structures & Algorithms</span>
+                        <span class="subject-grade">A+</span>
+                      </div>
+                      <div class="subject-item">
+                        <span class="subject-name">Object Oriented Programming</span>
+                        <span class="subject-grade">A+</span>
+                      </div>
+                      <div class="subject-item">
+                        <span class="subject-name">Database Management Systems</span>
+                        <span class="subject-grade">O</span>
+                      </div>
+                      <div class="subject-item">
+                        <span class="subject-name">System Programming and Operating Systems</span>
+                        <span class="subject-grade">O</span>
+                      </div>
+                      <div class="subject-item">
+                        <span class="subject-name">Computer Networks</span>
+                        <span class="subject-grade">O</span>
+                      </div>
+
+                      <div class="subject-item">
+                        <span class="subject-name">High Performance Computing</span>
+                        <span class="subject-grade">O</span>
+                      </div>
+
+                      <div class="subject-item">
+                        <span class="subject-name">Software Testing and QA</span>
+                        <span class="subject-grade">O</span>
+                      </div>
+                    </div>
+                    <div class="subject-column">
+                      <div class="subject-item">
+                        <span class="subject-name">Software Engineering and Project management</span>
+                        <span class="subject-grade">O</span>
+                      </div>
+                      <div class="subject-item">
+                        <span class="subject-name">Artificial Intelligence and Robotics</span>
+                        <span class="subject-grade">O</span>
+                      </div>
+                      <div class="subject-item">
+                        <span class="subject-name">Machine Learning</span>
+                        <span class="subject-grade">A</span>
+                      </div>
+                      <div class="subject-item">
+                        <span class="subject-name">Computer Organization and Architecture</span>
+                        <span class="subject-grade">A+</span>
+                      </div>
+                      <div class="subject-item">
+                        <span class="subject-name">Data Mining and Warehousing</span>
+                        <span class="subject-grade">O</span>
+                      </div>
+                      <div class="subject-item">
+                        <span class="subject-name">Data Science (Honours)</span>
+                        <span class="subject-grade">A+</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Skills Tab -->
+          <div class="tab-pane" id="skills-content">
+            <div class="skills-categories">
+              <div class="skill-category">
+                <h3 class="category-title">
+                  <span class="category-icon">🤖</span>
+                  Core Robotics & AI
+                </h3>
+                <div class="skill-tags">
+                  <span class="skill-tag">Robotic System Design</span>
+                  <span class="skill-tag">SLAM & Navigation</span>
+                  <span class="skill-tag">ROS 2 / micro-ROS</span>
+                  <span class="skill-tag">Autonomous Inspection Robots</span>
+                  <span class="skill-tag">Magnetic Adhesion Mechanisms</span>
+                  <span class="skill-tag">Ultrasonic Thickness Gauging</span>
+                  <span class="skill-tag">Sensor Fusion (LiDAR, IMU, Encoders)</span>
+                  <span class="skill-tag">Multi-Modal Mobility (Air / Ground / Wall)</span>
+                  <span class="skill-tag">AI & Deep Learning</span>
+                  <span class="skill-tag">Computer Vision (YOLO / Defect Detection)</span>
+                  <span class="skill-tag">Path Planning & Control</span>
+                  <span class="skill-tag">Real-Time Embedded Control</span>
+                  <span class="skill-tag">Mechatronics Integration</span>
+                </div>
+              </div>
+
+              <div class="skill-category">
+                <h3 class="category-title">
+                  <span class="category-icon">⚙️</span>
+                  Tools & Simulation
+                </h3>
+                <div class="skill-tags">
+                  <span class="skill-tag">SolidWorks</span>
+                  <span class="skill-tag">Fusion 360</span>
+                  <span class="skill-tag">Onshape</span>
+                  <span class="skill-tag">AutoCAD</span>
+                  <span class="skill-tag">CATIA</span>
+                  <span class="skill-tag">ANSYS / FEA</span>
+                  <span class="skill-tag">Gazebo / Ignition Simulation</span>
+                  <span class="skill-tag">RViz</span>
+                  <span class="skill-tag">Matplotlib / OpenCV</span>
+                  <span class="skill-tag">Python</span>
+                  <span class="skill-tag">C / C++</span>
+                  <span class="skill-tag">Arduino / PlatformIO</span>
+                  <span class="skill-tag">Jetson Orin / Orange Pi / LattePanda</span>
+                  <span class="skill-tag">Visual Studio Code</span>
+                </div>
+              </div>
+
+               <!-- Embedded Systems & Hardware -->
+                <div class="skill-category">
+                  <h3 class="category-title">
+                    <span class="category-icon">🔩</span>
+                    Embedded Systems & Hardware
+                  </h3>
+                  <div class="skill-tags">
+                    <span class="skill-tag">ESP32 / RP2040 / STM32</span>
+                    <span class="skill-tag">Arduino / Portenta H7</span>
+                    <span class="skill-tag">Orange Pi Zero 2W</span>
+                    <span class="skill-tag">LattePanda IOTA</span>
+                    <span class="skill-tag">PCB Design EasyEda Upto 4 layers</span>
+                    <span class="skill-tag">Sensor & Actuator Integration</span>
+                    <span class="skill-tag">Motor Control (PWM, PID, Feedback Loops)</span>
+                    <span class="skill-tag">Communication (I2C / UART / SPI / SSI / ESP-NOW / TCP/IP)</span>
+                    <span class="skill-tag">Power Management & Li-Ion Systems</span>
+                    <span class="skill-tag">Data Logging (SD Card / EEPROM)</span>
+                    <span class="skill-tag">OTA Firmware Updates</span>
+                    <span class="skill-tag">Real-Time Control (FreeRTOS)</span>
+                    <span class="skill-tag">Embedded Debugging (SWD / Serial Monitor)</span>
+                  </div>
+                </div>
+
+
+
+                  <!-- Mechanical Design & Fabrication -->
+                  <div class="skill-category">
+                    <h3 class="category-title">
+                      <span class="category-icon">🛠️</span>
+                      Mechanical Design & Fabrication
+                    </h3>
+                    <div class="skill-tags">
+                      <span class="skill-tag">Generative Design</span>
+                      <span class="skill-tag">Cycloidal & Planetary Gearbox Design</span>
+                      <span class="skill-tag">Static / Dynamic Stress Analysis</span>
+                      <span class="skill-tag">Tolerance & Material Selection</span>
+                      <span class="skill-tag">3D Printing (FDM / Resin)</span>
+                      <span class="skill-tag">CNC Machining</span>
+                      <span class="skill-tag">Assembly & Testing</span>
+                      <span class="skill-tag">Rapid Prototyping</span>
+                    </div>
+                  </div>
+
+
+                  <!-- Software & Data Systems -->
+                  <div class="skill-category">
+                    <h3 class="category-title">
+                      <span class="category-icon">💻</span>
+                      Software & Data Systems
+                    </h3>
+                    <div class="skill-tags">
+                      <span class="skill-tag">ROS Node Development</span>
+                      <span class="skill-tag">Custom Gazebo Plugins</span>
+                      <span class="skill-tag">SLAM (DLIO / LiDAR-IMU Fusion)</span>
+                      <span class="skill-tag">Path Optimization</span>
+                      <span class="skill-tag">Signal Processing</span>
+                      <span class="skill-tag">Machine Learning (PyTorch / TensorFlow)</span>
+                      <span class="skill-tag">Data Visualization</span>
+                      <span class="skill-tag">Real-Time Sensing & Feedback</span>
+                      <span class="skill-tag">Firmware Development</span>
+                    </div>
+                  </div>
+
+
+                                  <!-- Supporting Stack & DevOps -->
+                  <div class="skill-category">
+                    <h3 class="category-title">
+                      <span class="category-icon">🧩</span>
+                      Supporting Stack & DevOps
+                    </h3>
+                    <div class="skill-tags">
+                      <span class="skill-tag">Linux (Ubuntu)</span>
+                      <span class="skill-tag">Docker</span>
+                      <span class="skill-tag">Git / GitHub</span>
+                      <span class="skill-tag">VS Code / CMake</span>
+                      <span class="skill-tag">Bash Scripting</span>
+                      <span class="skill-tag">System Automation</span>
+                      <span class="skill-tag">Networking & IoT</span>
+                      <span class="skill-tag">Serial Communication Debugging</span>
+                    </div>
+                  </div>
+
+                  <!-- Research & Collaboration -->
+                  <div class="skill-category">
+                    <h3 class="category-title">
+                      <span class="category-icon">📚</span>
+                      Research & Collaboration
+                    </h3>
+                    <div class="skill-tags">
+                      <span class="skill-tag">Research Writing & Publications (IEEE-)</span>
+                      <span class="skill-tag">Proposal Development (NASA / JFE Steel)</span>
+                      <span class="skill-tag">Technical Documentation</span>
+                      <span class="skill-tag">Data Analysis & Visualization</span>
+                      <span class="skill-tag">Cross-Disciplinary Collaboration</span>
+                      <span class="skill-tag">Project Management & Scheduling</span>
+                      <span class="skill-tag">Presentation & Outreach</span>
+                    </div>
+                  </div>
+            </div>
+          </div>
+
+          <!-- Certifications Tab - Enhanced -->
+<div class="tab-pane" id="certifications-content">
+  <!-- Certification Categories -->
+  <div class="cert-categories">
+    <!-- Robotics & Control Systems -->
+    <div class="cert-category">
+      <h3 class="category-title">
+        <span class="category-icon">🤖</span>
+        Robotics & Control Systems
+      </h3>
+      <div class="certifications-grid">
+        <div class="certification-item">
+          <div class="cert-icon">🎮</div>
+          <div class="cert-content">
+            <h4>Applied Control Systems in Arduino</h4>
+            <p class="cert-issuer">Udemy</p>
+            <span class="cert-date">Dec 2024</span>
+            <span class="cert-badge">Control Systems</span>
+          </div>
+        </div>
+        
+        <div class="certification-item">
+          <div class="cert-icon">🛣️</div>
+          <div class="cert-content">
+            <h4>Introduction to Sampling Based Motion Planning</h4>
+            <p class="cert-issuer">Udemy</p>
+            <span class="cert-date">Dec 2024</span>
+            <span class="cert-badge">Motion Planning</span>
+          </div>
+        </div>
+        
+
+        <div class="certification-item">
+          <div class="cert-icon">🛣️</div>
+          <div class="cert-content">
+            <h4>Autonomous Robots nonholonomic Motion Planning Algorithm</h4>
+            <p class="cert-issuer">Udemy</p>
+            <span class="cert-date">Dec 2024</span>
+            <span class="cert-badge">Motion Planning</span>
+          </div>
+        </div>
+
+        <div class="certification-item">
+          <div class="cert-icon">🚁</div>
+          <div class="cert-content">
+            <h4>Drone Programming & Autopilot</h4>
+            <p class="cert-issuer">Udemy</p>
+            <span class="cert-date">Jan 2024</span>
+            <span class="cert-badge">Pymavlink · Dronekit</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- AI & Machine Learning -->
+    <div class="cert-category">
+      <h3 class="category-title">
+        <span class="category-icon">🧠</span>
+        AI & Machine Learning
+      </h3>
+      <div class="certifications-grid">
+        <div class="certification-item">
+          <div class="cert-icon">🌟</div>
+          <div class="cert-content">
+            <h4>Machine Learning Specialization</h4>
+            <p class="cert-issuer">Coursera</p>
+            <span class="cert-date">Jan 2024</span>
+            <span class="cert-badge">Advanced ML</span>
+          </div>
+        </div>
+        
+        <div class="certification-item">
+          <div class="cert-icon">🔍</div>
+          <div class="cert-content">
+            <h4>Deep Learning Specialization</h4>
+            <p class="cert-issuer">Coursera</p>
+            <span class="cert-date">Dec 2020</span>
+            <span class="cert-badge">Neural Networks</span>
+          </div>
+        </div>
+
+        <div class="certification-item">
+          <div class="cert-icon">🔍</div>
+          <div class="cert-content">
+            <h4>Mathematical Foundation for machine Learning</h4>
+            <p class="cert-issuer">Coursera</p>
+            <span class="cert-date">Dec 2023</span>
+            <span class="cert-badge">Neural Networks</span>
+          </div>
+        </div>
+        
+        <div class="certification-item">
+          <div class="cert-icon">👁️</div>
+          <div class="cert-content">
+            <h4>Yolo v8 Object Detection Tracking in python</h4>
+            <p class="cert-issuer">Udemy</p>
+            <span class="cert-date">Apr 2023</span>
+            <span class="cert-badge">Object Detection</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Autonomous Systems -->
+    <div class="cert-category">
+      <h3 class="category-title">
+        <span class="category-icon">🚗</span>
+        Autonomous Systems
+      </h3>
+      <div class="certifications-grid">
+        <div class="certification-item">
+          <div class="cert-icon">🎯</div>
+          <div class="cert-content">
+            <h4>Self-Driving Car Specialization</h4>
+            <p class="cert-issuer">Coursera</p>
+            <span class="cert-date">Dec 2020</span>
+            <span class="cert-badge">Full Stack</span>
+          </div>
+        </div>
+        
+        <div class="certification-item">
+          <div class="cert-icon">🗺️</div>
+          <div class="cert-content">
+            <h4>State Estimation & Localization</h4>
+            <p class="cert-issuer">Coursera</p>
+            <span class="cert-date">Aug 2020</span>
+            <span class="cert-badge">SLAM</span>
+          </div>
+        </div>
+        
+        <div class="certification-item">
+          <div class="cert-icon">🗺️</div>
+          <div class="cert-content">
+            <h4>Ros2 Self Driving Car with deep learning and computer vision</h4>
+            <p class="cert-issuer">Coursera</p>
+            <span class="cert-date">Jan 2024</span>
+            <span class="cert-badge">SLAM</span>
+          </div>
+        </div>
+
+
+        <div class="certification-item">
+          <div class="cert-icon">🧭</div>
+          <div class="cert-content">
+            <h4>Visual Perception for Autonomous Cars</h4>
+            <p class="cert-issuer">Coursera</p>
+            <span class="cert-date">Sep 2020</span>
+            <span class="cert-badge">Perception</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- LinkedIn Redirect -->
+  <div class="linkedin-redirect">
+    <div class="redirect-content">
+      <div class="linkedin-icon">💼</div>
+      <div class="redirect-text">
+        <h3>Explore All 50+ Certifications</h3>
+        <p>View my complete certification portfolio including ROS, TensorFlow, PyTorch, and specialized robotics courses on LinkedIn</p>
+      </div>
+      <a href="https://www.linkedin.com/in/pratik-walunj-060233193/details/certifications/" 
+         target="_blank" 
+         class="linkedin-btn">
+        View on LinkedIn
+        <span class="btn-arrow">→</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+          <!-- Achievements Tab - Professionalized -->
+<div class="tab-pane" id="achievements-content">
+  <div class="achievements-timeline">
+    <!-- 2022 Achievements -->
+    <div class="achievement-year-group">
+      <div class="year-marker">2022</div>
+      <div class="achievement-items">
+        <div class="achievement-item">
+          <div class="achievement-icon">🥇</div>
+          <div class="achievement-content">
+            <h3>1st Rank - UGCON Competition</h3>
+            <div class="achievement-meta">
+              <span class="achievement-issuer">Pimpri Chinchwad College of Engineering</span>
+              <span class="achievement-date">May 2022</span>
+            </div>
+            <p class="achievement-description">
+              Secured first position by presenting "AI-Based Office Assistant Robot" - an autonomous system designed to enhance workplace efficiency through intelligent task automation and human-robot interaction.
+            </p>
+            <div class="achievement-tags">
+              <span class="achievement-tag">Robotics</span>
+              <span class="achievement-tag">AI Integration</span>
+              <span class="achievement-tag">Human-Robot Interaction</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="achievement-item">
+          <div class="achievement-icon">👨‍🎓</div>
+          <div class="achievement-content">
+            <h3>Student of the Year Award</h3>
+            <div class="achievement-meta">
+              <span class="achievement-issuer">Pimpri Chinchwad College of Engineering & Research</span>
+              <span class="achievement-date">May 2022</span>
+            </div>
+            <p class="achievement-description">
+              Recognized as the most outstanding student for exceptional academic performance, technical innovation, and leadership in robotics projects throughout the academic year.
+            </p>
+            <div class="achievement-tags">
+              <span class="achievement-tag">Leadership</span>
+              <span class="achievement-tag">Academic Excellence</span>
+              <span class="achievement-tag">Innovation</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="achievement-item">
+          <div class="achievement-icon">🚀</div>
+          <div class="achievement-content">
+            <h3>TechCult National Level Project Completion</h3>
+            <div class="achievement-meta">
+              <span class="achievement-issuer">Nutan Maharashtra Institute of Engineering & Technology</span>
+              <span class="achievement-date">May 2022</span>
+            </div>
+            <p class="achievement-description">
+              Successfully completed and demonstrated "AI-Based Office Assistant Robot" at national-level competition, showcasing advanced capabilities in autonomous navigation and task execution.
+            </p>
+            <div class="achievement-tags">
+              <span class="achievement-tag">National Competition</span>
+              <span class="achievement-tag">Project Completion</span>
+              <span class="achievement-tag">Robotics</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2020 Achievements -->
+    <div class="achievement-year-group">
+      <div class="year-marker">2020</div>
+      <div class="achievement-items">
+        <div class="achievement-item">
+          <div class="achievement-icon">🥉</div>
+          <div class="achievement-content">
+            <h3>3rd Place - TechnoSpark Project Competition</h3>
+            <div class="achievement-meta">
+              <span class="achievement-issuer">Pimpri Chinchwad College of Engineering & Research</span>
+              <span class="achievement-date">April 2020</span>
+            </div>
+            <p class="achievement-description">
+              Awarded third place for developing "Automatic Ignition Termination System Using Gyro Sensor" - an innovative safety system for automotive applications using inertial measurement technology.
+            </p>
+            <div class="achievement-tags">
+              <span class="achievement-tag">Embedded Systems</span>
+              <span class="achievement-tag">Sensor Integration</span>
+              <span class="achievement-tag">Automotive Safety</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="achievement-item">
+          <div class="achievement-icon">🔭</div>
+          <div class="achievement-content">
+            <h3>2nd Place - Science Day Exhibition</h3>
+            <div class="achievement-meta">
+              <span class="achievement-issuer">GMRT, Tata Institute of Fundamental Research</span>
+              <span class="achievement-date">February 2020</span>
+            </div>
+            <p class="achievement-description">
+              Secured second position at prestigious GMRT Science Day Exhibition for presenting the gyro-sensor based ignition safety system, demonstrating practical application of physics in automotive safety.
+            </p>
+            <div class="achievement-tags">
+              <span class="achievement-tag">Research Exhibition</span>
+              <span class="achievement-tag">Sensor Technology</span>
+              <span class="achievement-tag">Innovation</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .about {
+    padding: 4rem 0;
+    background: linear-gradient(135deg, #0f1117 0%, #151726 50%, #1a1d2e 100%);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .about::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+      radial-gradient(circle at 20% 80%, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, rgba(139, 92, 246, 0.1) 0%, transparent 50%);
+    pointer-events: none;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    position: relative;
+    z-index: 2;
+  }
+
+  /* Top Description */
+  .about-description {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 3rem;
+  }
+
+  .section-title {
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 700;
+    background: linear-gradient(135deg, #ffffff 0%, #a5b4fc 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 1.5rem;
+  }
+
+  .description-text {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #cbd5e1;
+  }
+
+  .highlight {
+    color: var(--accent);
+    font-weight: 600;
+  }
+
+  /* Main Grid - Equal Height */
+  .about-main-grid {
+    display: grid;
+    grid-template-columns: 380px 1fr;
+    gap: 2.5rem;
+    align-items: stretch;
+    min-height: 700px;
+  }
+
+  /* Left Column - Ensure full height */
+  .about-left {
+    display: flex;
+    height: 100%;
+  }
+
+  .profile-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 1.5rem;
+    padding: 1.5rem;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .image-container {
+    position: relative;
+    border-radius: 1rem;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+    flex-shrink: 0;
+  }
+
+  .profile-image {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+
+  .image-glow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, transparent, rgba(59, 130, 246, 0.1), transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .image-container:hover .profile-image {
+    transform: scale(1.05);
+  }
+
+  .image-container:hover .image-glow {
+    opacity: 1;
+  }
+
+  /* Current Position with Logo */
+  .current-position {
+    margin-bottom: 1.5rem;
+    flex-shrink: 0;
+  }
+
+  .position-badge {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
+    border: 1px solid rgba(59, 130, 246, 0.3);
+    border-radius: 1rem;
+    padding: 1rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .logo-container {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    flex-shrink: 0;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .university-logo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.9) contrast(1.1);
+  }
+
+  .logo-blend-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      135deg,
+      rgba(59, 130, 246, 0.3) 0%,
+      rgba(139, 92, 246, 0.2) 50%,
+      transparent 100%
+    );
+    mix-blend-mode: overlay;
+  }
+
+  .logo-text-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.1) 0%,
+      transparent 50%,
+      rgba(59, 130, 246, 0.1) 100%
+    );
+  }
+
+  .blend-text {
+    font-size: 0.7rem;
+    font-weight: 800;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    text-shadow: 
+      0 2px 4px rgba(0, 0, 0, 0.5),
+      0 0 10px rgba(59, 130, 246, 0.3);
+    mix-blend-mode: overlay;
+    opacity: 0.9;
+  }
+
+  .position-info h3 {
+    color: white;
+    font-size: 0.875rem;
+    margin-bottom: 0.25rem;
+    opacity: 0.8;
+  }
+
+  .position-info p {
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+  }
+
+  .position-info span {
+    color: var(--accent);
+    font-size: 0.8rem;
+    font-weight: 500;
+  }
+
+  /* Enhanced Animated Stats */
+  .stats-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    flex: 1;
+  }
+
+  .stat-item {
+    text-align: center;
+  }
+
+  .stat-circle {
+    position: relative;
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 0.5rem;
+  }
+
+  .stat-progress {
+    width: 100%;
+    height: 100%;
+    transform: rotate(-90deg);
+  }
+
+  .progress-bg {
+    fill: none;
+    stroke: rgba(255, 255, 255, 0.1);
+    stroke-width: 3;
+  }
+
+  .progress-fill {
+    fill: none;
+    stroke: url(#progressGradient);
+    stroke-width: 3;
+    stroke-linecap: round;
+    stroke-dasharray: 283;
+    stroke-dashoffset: 283;
+    transition: stroke-dashoffset 2s ease-in-out;
+  }
+
+  .stat-number {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: white;
+  }
+
+  .stat-plus {
+    position: absolute;
+    top: 50%;
+    right: -8px;
+    transform: translateY(-50%);
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--accent);
+  }
+
+  .stat-label {
+    font-size: 0.7rem;
+    color: #cbd5e1;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    line-height: 1.2;
+  }
+
+  /* Contact Mini */
+  .contact-mini {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 0.75rem;
+    padding: 1rem;
+    flex-shrink: 0;
+  }
+
+  .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+    font-size: 0.8rem;
+    color: #cbd5e1;
+  }
+
+  .contact-item:last-child {
+    margin-bottom: 0;
+  }
+
+  .contact-icon {
+    font-size: 0.9rem;
+    flex-shrink: 0;
+  }
+
+  /* Right Column - Ensure full height */
+  .about-right {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 1.5rem;
+    padding: 1.5rem;
+    backdrop-filter: blur(20px);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    min-height: 100%;
+  }
+
+  /* Content Tabs - Updated for 5 tabs */
+  .content-tabs {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    flex-shrink: 0;
+  }
+
+  .tab-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    padding: 0.75rem 0.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 0.5rem;
+    color: #cbd5e1;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.75rem;
+  }
+
+  .tab-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-1px);
+  }
+
+  .tab-btn.active {
+    background: linear-gradient(135deg, var(--accent) 0%, #8b5cf6 100%);
+    border-color: transparent;
+    color: white;
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+  }
+
+  .tab-icon {
+    font-size: 0.9rem;
+  }
+
+  /* Tab Content */
+  .tab-content {
+    flex: 1;
+    overflow: hidden;
+    position: relative;
+    min-height: 0; /* Important for flex child scrolling */
+  }
+
+  .tab-pane {
+    display: none;
+    height: 100%;
+    overflow-y: auto;
+    animation: fadeInUp 0.4s ease;
+  }
+
+  .tab-pane.active {
+    display: block;
+  }
+
+  /* Experience Timeline - UPDATED */
+  .experience-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    height: 100%;
+  }
+
+  .experience-item {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+    position: relative;
+  }
+
+  .experience-item:hover {
+    border-color: rgba(59, 130, 246, 0.3);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  }
+
+  .experience-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .experience-info {
+    flex: 1;
+  }
+
+  .experience-title {
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+  }
+
+  .experience-company {
+    color: var(--accent);
+    font-weight: 500;
+    font-size: 0.9rem;
+    margin-bottom: 0.3rem;
+  }
+
+  .experience-period {
+    color: #94a3b8;
+    font-size: 0.8rem;
+    margin-bottom: 0.2rem;
+  }
+
+  .experience-location {
+    color: #cbd5e1;
+    font-size: 0.75rem;
+    font-style: italic;
+  }
+
+  /* Experience Logo Container - LARGER 150px */
+  .company-logo {
+    flex-shrink: 0;
+    margin-left: 1rem;
+  }
+
+  .experience-logo-container {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .experience-logo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.9) contrast(1.1);
+  }
+
+  .experience-logo-blend {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      135deg,
+      rgba(59, 130, 246, 0.3) 0%,
+      rgba(139, 92, 246, 0.2) 50%,
+      transparent 100%
+    );
+    mix-blend-mode: overlay;
+  }
+
+  .experience-logo-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.1) 0%,
+      transparent 50%,
+      rgba(59, 130, 246, 0.1) 100%
+    );
+  }
+
+  .experience-blend-text {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    text-shadow: 
+      0 4px 8px rgba(0, 0, 0, 0.5),
+      0 0 20px rgba(59, 130, 246, 0.4);
+    mix-blend-mode: overlay;
+    opacity: 0.9;
+  }
+
+  .experience-description {
+    margin-top: 1rem;
+  }
+
+  .experience-description p {
+    color: #cbd5e1;
+    line-height: 1.6;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+  }
+
+  .experience-skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.75rem;
+  }
+
+  /* Education Timeline - NEW */
+  .education-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    height: 100%;
+  }
+
+  .education-item {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+    position: relative;
+  }
+
+  .education-item:hover {
+    border-color: rgba(59, 130, 246, 0.3);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  }
+
+  .education-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+
+  .education-info {
+    flex: 1;
+  }
+
+  .education-degree {
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+  }
+
+  .education-school {
+    color: var(--accent);
+    font-weight: 500;
+    font-size: 0.9rem;
+    margin-bottom: 0.3rem;
+  }
+
+  .education-period {
+    color: #94a3b8;
+    font-size: 0.8rem;
+    margin-bottom: 0.2rem;
+  }
+
+  .education-grade {
+    color: #cbd5e1;
+    font-size: 0.8rem;
+    font-weight: 500;
+  }
+
+  /* Education Logo Container - LARGER 150px */
+  .education-logo {
+    flex-shrink: 0;
+    margin-left: 1rem;
+  }
+
+  .education-logo-container {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .education-logo-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.9) contrast(1.1);
+  }
+
+  .education-logo-blend {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      135deg,
+      rgba(59, 130, 246, 0.3) 0%,
+      rgba(139, 92, 246, 0.2) 50%,
+      transparent 100%
+    );
+    mix-blend-mode: overlay;
+  }
+
+  .education-logo-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.1) 0%,
+      transparent 50%,
+      rgba(59, 130, 246, 0.1) 100%
+    );
+  }
+
+  .education-blend-text {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    text-shadow: 
+      0 4px 8px rgba(0, 0, 0, 0.5),
+      0 0 20px rgba(59, 130, 246, 0.4);
+    mix-blend-mode: overlay;
+    opacity: 0.9;
+  }
+
+  /* Education Subjects */
+.education-subjects {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.subjects-title {
+  color: var(--accent);
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.subjects-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+
+.subject-column {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.subject-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 0.6rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.subject-item:hover {
+  background: rgba(59, 130, 246, 0.1);
+  border-color: rgba(59, 130, 246, 0.2);
+  transform: translateX(4px);
+}
+
+.subject-code {
+  color: var(--accent);
+  font-size: 0.7rem;
+  font-weight: 600;
+  min-width: 60px;
+  flex-shrink: 0;
+}
+
+.subject-name {
+  color: #cbd5e1;
+  font-size: 0.8rem;
+  flex: 1;
+}
+
+.subject-grade, .subject-status {
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 0.1rem 0.4rem;
+  border-radius: 0.25rem;
+  flex-shrink: 0;
+}
+
+.subject-grade {
+  background: rgba(34, 197, 94, 0.2);
+  color: #22c55e;
+  border: 1px solid rgba(34, 197, 94, 0.3);
+}
+
+.subject-status {
+  background: rgba(59, 130, 246, 0.2);
+  color: #3b82f6;
+  border: 1px solid rgba(59, 130, 246, 0.3);
+}
+  /* Skills */
+  .skills-categories {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    height: 100%;
+  }
+
+  .skill-category {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 0.75rem;
+    padding: 1rem;
+  }
+
+  .category-title {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 0.75rem;
+  }
+
+  .category-icon {
+    font-size: 1rem;
+  }
+
+  .skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+
+  .skill-tag {
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.2) 0%, rgba(139, 92, 246, 0.2) 100%);
+    border: 1px solid rgba(59, 130, 246, 0.3);
+    color: #e2e8f0;
+    padding: 0.3rem 0.6rem;
+    border-radius: 1rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+  }
+
+  .skill-tag:hover {
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.3) 0%, rgba(139, 92, 246, 0.3) 100%);
+    transform: translateY(-1px);
+  }
+/* Enhanced Certifications Styles */
+.cert-categories {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.cert-category {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.cert-category:hover {
+  border-color: rgba(59, 130, 246, 0.3);
+  transform: translateY(-2px);
+}
+
+.cert-category .category-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.cert-category .category-icon {
+  font-size: 1.2rem;
+}
+
+.certifications-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+}
+
+.certification-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 0.75rem;
+  padding: 1rem;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.certification-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.1), transparent);
+  transition: left 0.5s ease;
+}
+
+.certification-item:hover::before {
+  left: 100%;
+}
+
+.certification-item:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(59, 130, 246, 0.2);
+  transform: translateY(-2px);
+}
+
+.cert-icon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.2) 0%, rgba(139, 92, 246, 0.2) 100%);
+  border-radius: 0.5rem;
+  border: 1px solid rgba(59, 130, 246, 0.3);
+}
+
+.cert-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.cert-content h4 {
+  color: white;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+  line-height: 1.3;
+}
+
+.cert-issuer {
+  color: var(--accent);
+  font-size: 0.8rem;
+  font-weight: 500;
+  margin-bottom: 0.4rem;
+}
+
+.cert-date {
+  display: inline-block;
+  background: rgba(59, 130, 246, 0.2);
+  color: #3b82f6;
+  padding: 0.2rem 0.6rem;
+  border-radius: 1rem;
+  font-size: 0.7rem;
+  font-weight: 500;
+  margin-bottom: 0.4rem;
+  border: 1px solid rgba(59, 130, 246, 0.3);
+}
+
+.cert-badge {
+  display: block;
+  background: rgba(139, 92, 246, 0.2);
+  color: #8b5cf6;
+  padding: 0.2rem 0.6rem;
+  border-radius: 0.5rem;
+  font-size: 0.7rem;
+  font-weight: 500;
+  border: 1px solid rgba(139, 92, 246, 0.3);
+}
+
+/* LinkedIn Redirect Section */
+.linkedin-redirect {
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.linkedin-redirect::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.05), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.linkedin-redirect:hover::before {
+  opacity: 1;
+}
+
+.redirect-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  text-align: left;
+}
+
+.linkedin-icon {
+  font-size: 2rem;
+  flex-shrink: 0;
+}
+
+.redirect-text {
+  flex: 1;
+}
+
+.redirect-text h3 {
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.redirect-text p {
+  color: #cbd5e1;
+  font-size: 0.85rem;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.linkedin-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: linear-gradient(135deg, #0a66c2 0%, #004182 100%);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.75rem;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  flex-shrink: 0;
+}
+
+.linkedin-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(10, 102, 194, 0.3);
+  background: linear-gradient(135deg, #004182 0%, #0a66c2 100%);
+}
+
+.btn-arrow {
+  transition: transform 0.3s ease;
+}
+
+.linkedin-btn:hover .btn-arrow {
+  transform: translateX(3px);
+}
+
+/* Responsive Design for Certifications */
+@media (max-width: 768px) {
+  .certifications-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .redirect-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+  
+  .linkedin-btn {
+    align-self: stretch;
+    justify-content: center;
+  }
+  
+  .certification-item {
+    padding: 0.875rem;
+  }
+  
+  .cert-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .cert-category {
+    padding: 1rem;
+  }
+  
+  .cert-content h4 {
+    font-size: 0.85rem;
+  }
+  
+  .linkedin-redirect {
+    padding: 1.25rem;
+  }
+}
+  /* Certifications */
+  .certifications-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+  }
+
+  .certification-item {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 0.75rem;
+    padding: 1rem;
+    text-align: center;
+    transition: all 0.3s ease;
+  }
+
+  .certification-item:hover {
+    border-color: rgba(59, 130, 246, 0.3);
+    transform: translateY(-1px);
+  }
+
+  .cert-icon {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .certification-item h3 {
+    color: white;
+    font-size: 0.85rem;
+    margin-bottom: 0.3rem;
+    line-height: 1.2;
+  }
+
+  .certification-item p {
+    color: #cbd5e1;
+    font-size: 0.75rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+  }
+
+  .cert-date {
+    background: var(--accent);
+    color: white;
+    padding: 0.2rem 0.6rem;
+    border-radius: 1rem;
+    font-size: 0.7rem;
+    font-weight: 500;
+  }
+
+  .view-more-certifications {
+    text-align: center;
+    padding: 0.75rem;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 0.5rem;
+  }
+
+  .view-more-certifications p {
+    color: #94a3b8;
+    font-style: italic;
+    font-size: 0.8rem;
+  }
+
+  /* Achievements */
+  .achievements-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    height: 100%;
+  }
+
+  .achievement-item {
+    display: flex;
+    gap: 1rem;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 0.75rem;
+    padding: 1rem;
+    transition: all 0.3s ease;
+  }
+
+  .achievement-item:hover {
+    border-color: rgba(59, 130, 246, 0.3);
+    transform: translateY(-1px);
+  }
+
+  .achievement-year {
+    flex-shrink: 0;
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, var(--accent) 0%, #8b5cf6 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 700;
+    font-size: 0.75rem;
+  }
+
+  .achievement-content {
+    flex: 1;
+  }
+
+  .achievement-content h3 {
+    color: white;
+    font-size: 0.9rem;
+    margin-bottom: 0.3rem;
+  }
+
+  .achievement-content p {
+    color: #cbd5e1;
+    font-size: 0.8rem;
+    line-height: 1.3;
+  }
+
+  /* Animations */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* SVG Gradient */
+  .progress-gradient {
+    position: absolute;
+    width: 0;
+    height: 0;
+  }
+
+  /* Responsive Design */
+  @media (max-width: 1024px) {
+    .about-main-grid {
+      grid-template-columns: 340px 1fr;
+      gap: 2rem;
+    }
+
+    .content-tabs {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .experience-logo-container,
+    .education-logo-container {
+      width: 120px;
+      height: 120px;
+    }
+
+    .experience-blend-text,
+    .education-blend-text {
+      font-size: 1.2rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+  .education-subjects {
+    margin-top: 1rem;
+    padding-top: 1rem;
+  }
+  
+  .subject-item {
+    flex-wrap: wrap;
+    gap: 0.3rem;
+  }
+  
+  .subject-code {
+    min-width: 50px;
+  }
+}
+
+  @media (max-width: 768px) {
+    .about {
+      padding: 3rem 0;
+    }
+
+    .about-main-grid {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      min-height: auto;
+    }
+
+    .about-left, .about-right {
+      height: auto;
+    }
+
+    .profile-card {
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    .content-tabs {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .stats-container {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .certifications-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .tab-content {
+      min-height: auto;
+    }
+
+    .logo-container {
+      width: 45px;
+      height: 45px;
+    }
+
+    .blend-text {
+      font-size: 0.65rem;
+    }
+
+    /* Experience & Education responsive */
+    .experience-header,
+    .education-header {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .company-logo,
+    .education-logo {
+      margin-left: 0;
+      margin-top: 1rem;
+      align-self: center;
+    }
+
+    .experience-logo-container,
+    .education-logo-container {
+      width: 100px;
+      height: 100px;
+    }
+
+    .experience-blend-text,
+    .education-blend-text {
+      font-size: 1rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .container {
+      padding: 0 1rem;
+    }
+
+    .profile-card {
+      padding: 1.25rem;
+    }
+
+    .profile-image {
+      height: 200px;
+    }
+
+    .position-badge {
+      flex-direction: column;
+      text-align: center;
+      gap: 0.75rem;
+    }
+
+    .logo-container {
+      align-self: center;
+    }
+
+    .stats-container {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .stat-circle {
+      width: 60px;
+      height: 60px;
+    }
+
+    .about-right {
+      padding: 1.25rem;
+    }
+
+    .content-tabs {
+      grid-template-columns: 1fr;
+    }
+
+    .experience-header,
+    .education-header {
+      flex-direction: column;
+      text-align: center;
+      gap: 1rem;
+    }
+
+    .company-logo,
+    .education-logo {
+      align-self: center;
+      margin-top: 1rem;
+    }
+
+    .experience-logo-container,
+    .education-logo-container {
+      width: 80px;
+      height: 80px;
+    }
+
+    .experience-blend-text,
+    .education-blend-text {
+      font-size: 0.8rem;
+    }
+
+    .achievement-item {
+      flex-direction: column;
+      text-align: center;
+      gap: 0.75rem;
+    }
+
+    .achievement-year {
+      align-self: center;
+    }
+
+    .logo-container {
+      width: 40px;
+      height: 40px;
+    }
+
+    .blend-text {
+      font-size: 0.6rem;
+    }
+  }
+
+
+
+  /* Enhanced Achievements Styles */
+.achievements-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  height: 100%;
+}
+
+.achievement-year-group {
+  position: relative;
+}
+
+.year-marker {
+  position: sticky;
+  top: 0;
+  background: linear-gradient(135deg, var(--accent) 0%, #8b5cf6 100%);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 2rem;
+  font-weight: 700;
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+  display: inline-block;
+  backdrop-filter: blur(10px);
+  z-index: 10;
+  box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+}
+
+.achievement-items {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  position: relative;
+}
+
+.achievement-items::before {
+  content: '';
+  position: absolute;
+  left: 25px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, 
+    rgba(59, 130, 246, 0.3) 0%, 
+    rgba(139, 92, 246, 0.3) 50%, 
+    transparent 100%);
+  z-index: 1;
+}
+
+.achievement-item {
+  display: flex;
+  gap: 1.25rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 2;
+}
+
+.achievement-item:hover {
+  border-color: rgba(59, 130, 246, 0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.achievement-icon {
+  flex-shrink: 0;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.2) 0%, rgba(139, 92, 246, 0.2) 100%);
+  border: 2px solid rgba(59, 130, 246, 0.4);
+  border-radius: 50%;
+  font-size: 1.2rem;
+  position: relative;
+}
+
+.achievement-icon::before {
+  content: '';
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent) 0%, #8b5cf6 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+}
+
+.achievement-item:hover .achievement-icon::before {
+  opacity: 0.3;
+}
+
+.achievement-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.achievement-content h3 {
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  line-height: 1.3;
+}
+
+.achievement-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+  align-items: center;
+}
+
+.achievement-issuer {
+  color: var(--accent);
+  font-size: 0.85rem;
+  font-weight: 500;
+  background: rgba(59, 130, 246, 0.1);
+  padding: 0.2rem 0.6rem;
+  border-radius: 0.5rem;
+  border: 1px solid rgba(59, 130, 246, 0.2);
+}
+
+.achievement-date {
+  color: #94a3b8;
+  font-size: 0.8rem;
+  font-weight: 500;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 0.2rem 0.6rem;
+  border-radius: 0.5rem;
+}
+
+.achievement-description {
+  color: #cbd5e1;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin-bottom: 0.75rem;
+}
+
+.achievement-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.achievement-tag {
+  background: rgba(139, 92, 246, 0.1);
+  color: #c4b5fd;
+  padding: 0.2rem 0.6rem;
+  border-radius: 1rem;
+  font-size: 0.7rem;
+  font-weight: 500;
+  border: 1px solid rgba(139, 92, 246, 0.2);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .achievement-item {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+    padding: 1.25rem;
+  }
+
+  .achievement-meta {
+    justify-content: center;
+  }
+
+  .achievement-items::before {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .achievement-icon {
+    align-self: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .achievement-year-group {
+    text-align: center;
+  }
+
+  .achievement-meta {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .achievement-content h3 {
+    font-size: 1rem;
+  }
+
+  .achievement-description {
+    font-size: 0.85rem;
+  }
+}
+</style>
+
+<svg class="progress-gradient">
+  <defs>
+    <linearGradient id="progressGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#3b82f6" />
+      <stop offset="100%" stop-color="#8b5cf6" />
+    </linearGradient>
+  </defs>
+</svg>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    // Tab functionality
+    const tabBtns = document.querySelectorAll('.tab-btn');
+    const tabPanes = document.querySelectorAll('.tab-pane');
+
+    tabBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        // Remove active class from all buttons and panes
+        tabBtns.forEach(b => b.classList.remove('active'));
+        tabPanes.forEach(pane => pane.classList.remove('active'));
+
+        // Add active class to clicked button
+        btn.classList.add('active');
+
+        // Show corresponding pane
+        const tab = btn.getAttribute('data-tab');
+        const targetPane = document.getElementById(`${tab}-content`);
+        if (targetPane) {
+          targetPane.classList.add('active');
+        }
+      });
+    });
+
+    // Fixed Animated counters with proper gradient animation
+    const observerOptions = {
+      threshold: 0.3,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const statNumbers = entry.target.querySelectorAll('.stat-number');
+          const progressCircles = entry.target.querySelectorAll<SVGCircleElement>('.progress-fill');
+          
+          // Animate numbers
+          statNumbers.forEach(stat => {
+            const target = parseInt(stat.getAttribute('data-target') ?? '0', 10);
+            const duration = 1800;
+            const step = target / (duration / 16);
+            let current = 0;
+            
+            const timer = setInterval(() => {
+              current += step;
+              if (current >= target) {
+                current = target;
+                clearInterval(timer);
+              }
+              stat.textContent = String(Math.floor(current));
+            }, 16);
+          });
+
+          // Animate progress circles - FIXED
+          progressCircles.forEach(circle => {
+            const percentage = Number(circle.getAttribute('data-percentage') ?? '0');
+            const circumference = 283; // 2 * π * 45 ≈ 283
+            const offset = circumference - (percentage / 100) * circumference;
+            
+            // Use requestAnimationFrame for smooth animation
+            requestAnimationFrame(() => {
+              circle.style.strokeDashoffset = String(offset);
+            });
+          });
+
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    // Observe stats container
+    const statsContainer = document.querySelector('.stats-container');
+    if (statsContainer) {
+      observer.observe(statsContainer);
+    }
+
+    // Initialize progress circles with correct initial state
+    const initializeProgressCircles = () => {
+      const progressCircles = document.querySelectorAll<SVGCircleElement>('.progress-fill');
+      progressCircles.forEach(circle => {
+        // Set initial stroke-dasharray and stroke-dashoffset
+        circle.style.strokeDasharray = '283';
+        circle.style.strokeDashoffset = '283';
+      });
+    };
+
+    // Initialize on load
+    initializeProgressCircles();
+  });
+</script>

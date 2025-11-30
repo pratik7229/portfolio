@@ -1,0 +1,321 @@
+---
+// src/components/Contact.astro
+---
+
+<section id="contact" class="contact-section">
+  <div class="container">
+    
+    <div class="section-header">
+      <h2 class="section-title">Get In Touch</h2>
+      <p class="section-subtitle">Interested in collaborating on robotics research or AI projects? Let's connect.</p>
+      <div class="title-line"></div>
+    </div>
+
+    <div class="contact-wrapper">
+      
+      <div class="contact-info">
+        <h3>Contact Information</h3>
+        <p class="info-desc">
+          I am currently available for research collaborations and engineering roles.
+        </p>
+
+        <div class="info-item">
+          <div class="icon-box">📧</div>
+          <div class="info-text">
+            <span class="label">Email</span>
+            <a href="mailto:pratikwalunj7229@gmail.com" class="value">pratikwalunj7229@gmail.com</a>
+          </div>
+        </div>
+
+        <div class="info-item">
+          <div class="icon-box">📍</div>
+          <div class="info-text">
+            <span class="label">Location</span>
+            <span class="value">Reno, Nevada, USA</span>
+          </div>
+        </div>
+
+        <div class="social-links">
+          <a href="https://github.com/pratik7229" target="_blank" class="social-btn" aria-label="GitHub">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/in/pratik-walunj-060233193/" target="_blank" class="social-btn" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+          <a href="https://scholar.google.com/citations?user=iExhIXwAAAAJ&hl=en" target="_blank" class="social-btn" aria-label="Google Scholar">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm0-24L0 9.5l4.838 3.94A8 8 0 0 1 12 9a8 8 0 0 1 7.162 4.44L24 9.5z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="form-container">
+        
+        <div id="successMessage" class="success-message" style="display: none;">
+          <div class="success-icon">✨</div>
+          <h3>Message Sent Successfully!</h3>
+          <p>Thank you for reaching out. I will get back to you shortly.</p>
+          <button id="resetBtn" class="reset-btn">Send Another Message</button>
+        </div>
+
+        <form id="contactForm" action="https://formsubmit.co/pratikwalunj7229@gmail.com" method="POST">
+          <input type="text" name="_honey" style="display:none">
+          <input type="hidden" name="_captcha" value="false">
+          
+          <div class="form-group">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" required placeholder="John Doe">
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" required placeholder="john@example.com">
+          </div>
+
+          <div class="form-group">
+            <label for="subject">Subject</label>
+            <input type="text" id="subject" name="subject" required placeholder="Collaboration Opportunity">
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" required placeholder="Tell me about your project..."></textarea>
+          </div>
+
+          <button type="submit" class="submit-btn">
+            <span>Send Message</span>
+            <svg class="send-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="22" y1="2" x2="11" y2="13"></line>
+              <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+            </svg>
+          </button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<style>
+  .contact-section {
+    padding: 6rem 0;
+    background: #0f1117;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  /* Header */
+  .section-header { text-align: center; margin-bottom: 4rem; }
+  .section-title {
+    font-size: 3rem; font-weight: 700;
+    background: linear-gradient(135deg, #fff 0%, #a5b4fc 100%);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  }
+  .section-subtitle { color: #94a3b8; margin-top: 1rem; }
+  .title-line { width: 80px; height: 4px; background: #3b82f6; margin: 1.5rem auto; border-radius: 2px; }
+
+  /* Wrapper */
+  .contact-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 3rem;
+    align-items: stretch;
+  }
+
+  /* --- LEFT: INFO CARD --- */
+  .contact-info {
+    background: linear-gradient(145deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.01) 100%);
+    border: 1px solid rgba(255,255,255,0.05);
+    border-radius: 1.5rem;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .contact-info h3 { font-size: 2rem; color: white; margin-bottom: 1rem; }
+  .info-desc { color: #cbd5e1; line-height: 1.6; margin-bottom: 3rem; }
+
+  .info-item { display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem; }
+  .icon-box {
+    width: 50px; height: 50px; background: rgba(59, 130, 246, 0.1);
+    border-radius: 12px; display: flex; align-items: center; justify-content: center;
+    font-size: 1.5rem; color: #3b82f6; border: 1px solid rgba(59, 130, 246, 0.2);
+  }
+  
+  .info-text { display: flex; flex-direction: column; }
+  .label { font-size: 0.8rem; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.05em; }
+  .value { color: white; font-weight: 500; font-size: 1.1rem; text-decoration: none; transition: color 0.3s; }
+  a.value:hover { color: #3b82f6; }
+
+  .social-links { display: flex; gap: 1rem; margin-top: auto; }
+  .social-btn {
+    width: 45px; height: 45px; border-radius: 50%;
+    background: rgba(255,255,255,0.05); color: #cbd5e1;
+    display: flex; align-items: center; justify-content: center;
+    border: 1px solid rgba(255,255,255,0.1); transition: all 0.3s ease;
+  }
+  .social-btn:hover {
+    background: #3b82f6; color: white; transform: translateY(-3px); border-color: #3b82f6;
+  }
+  .social-btn svg { width: 20px; height: 20px; }
+
+  /* --- RIGHT: FORM --- */
+  .form-container {
+    background: #151726;
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 1.5rem;
+    padding: 3rem;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    position: relative;
+  }
+
+  .form-group { margin-bottom: 1.5rem; }
+  
+  label {
+    display: block; color: #94a3b8; font-size: 0.9rem; margin-bottom: 0.5rem; font-weight: 500;
+  }
+
+  input, textarea {
+    width: 100%;
+    background: rgba(0,0,0,0.2);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 0.75rem;
+    padding: 1rem;
+    color: white;
+    font-family: inherit;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+  }
+
+  input:focus, textarea:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
+    background: rgba(0,0,0,0.3);
+  }
+
+  /* Submit Button */
+  .submit-btn {
+    width: 100%;
+    padding: 1rem;
+    background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+    color: white;
+    border: none;
+    border-radius: 0.75rem;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(59, 130, 246, 0.4);
+  }
+
+  .submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(59, 130, 246, 0.5);
+  }
+
+  .send-icon { width: 18px; height: 18px; }
+
+  /* Success Message */
+  .success-message {
+    text-align: center;
+    padding: 2rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    animation: fadeIn 0.5s ease;
+  }
+
+  .success-icon { font-size: 4rem; margin-bottom: 1rem; }
+  .success-message h3 { font-size: 1.8rem; color: white; margin-bottom: 0.5rem; }
+  .success-message p { color: #cbd5e1; margin-bottom: 2rem; }
+  
+  .reset-btn {
+    background: transparent; border: 1px solid rgba(255,255,255,0.2);
+    color: white; padding: 0.8rem 1.5rem; border-radius: 2rem;
+    cursor: pointer; transition: all 0.3s;
+  }
+  .reset-btn:hover { background: rgba(255,255,255,0.1); border-color: white; }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Responsive */
+  @media (max-width: 900px) {
+    .contact-wrapper { grid-template-columns: 1fr; gap: 2rem; }
+    .contact-info { padding: 2rem; }
+    .form-container { padding: 2rem; }
+  }
+</style>
+
+<script>
+  // Handle Form Submission via AJAX to avoid redirect
+  const form = document.getElementById('contactForm') as HTMLFormElement;
+  const successDiv = document.getElementById('successMessage');
+  const resetBtn = document.getElementById('resetBtn');
+
+  if (form && successDiv) {
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const submitBtn = form.querySelector('.submit-btn') as HTMLButtonElement;
+      const originalBtnText = submitBtn.innerHTML;
+      
+      // Loading State
+      submitBtn.innerHTML = 'Sending...';
+      submitBtn.style.opacity = '0.7';
+      submitBtn.disabled = true;
+
+      const formData = new FormData(form);
+
+      fetch(form.action, {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      })
+      .then(response => {
+        if (response.ok) {
+          // Hide Form, Show Success
+          form.style.display = 'none';
+          successDiv.style.display = 'flex';
+          form.reset();
+        } else {
+          alert('Oops! There was a problem submitting your form.');
+        }
+      })
+      .catch(error => {
+        alert('Oops! There was a problem submitting your form.');
+      })
+      .finally(() => {
+        // Reset button state
+        submitBtn.innerHTML = originalBtnText;
+        submitBtn.style.opacity = '1';
+        submitBtn.disabled = false;
+      });
+    });
+
+    // Reset logic to show form again
+    if(resetBtn) {
+      resetBtn.addEventListener('click', () => {
+        successDiv.style.display = 'none';
+        form.style.display = 'block';
+      });
+    }
+  }
+</script>

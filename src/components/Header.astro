@@ -1,0 +1,294 @@
+---
+// src/components/Header.astro
+---
+
+<header class="header">
+  <div class="container">
+    <nav class="nav">
+      <div class="logo">
+        <div class="logo-container">
+          <a href="#" id="logo-link">
+            <img src="/logo.png" alt="Pratik Waluni Logo" class="logo-image" />
+          </a>
+        </div>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#home" class="nav-link active">Home</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#projects" class="nav-link">Portfolio</a></li>
+        <li><a href="#contact" class="nav-link contact-button">Contact Me</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<style>
+  .header {
+    background: transparent;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.7s ease;
+    padding: 0.01rem 0;
+  }
+
+  .header.scrolled {
+    background: rgba(21, 23, 38, 0.98);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    padding: 0.5rem 0;
+  }
+  
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 90%;
+    margin: 0 auto;
+  }
+  
+  .logo-container {
+    display: flex;
+    align-items: center;
+    gap: clamp(0.2rem, 0.1vw, 0.1rem);
+  }
+
+  #logo-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+  }
+  
+  .logo-image {
+    width: 7em;
+    height: 7em;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+  }
+
+  #logo-link:hover .logo-image {
+    transform: scale(1.1);
+  }
+  
+  .nav-links {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    gap: clamp(1.5rem, 4.5vw, 2.5rem);
+    margin: 0;
+    padding: 0;
+  }
+  
+  .nav-link {
+    color: var(--text);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: clamp(0.9rem, 2vw, 1rem);
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    padding: 0.1rem 0;
+    position: relative;
+  }
+  
+  .nav-link:hover,
+  .nav-link.active {
+    color: var(--accent);
+  }
+  
+  .nav-link:not(.contact-button):after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--accent);
+    transition: width 0.3s ease;
+  }
+  
+  .nav-link:not(.contact-button):hover:after,
+  .nav-link:not(.contact-button).active:after {
+    width: 100%;
+  }
+  
+  .contact-button {
+    background-color: var(--accent);
+    color: white !important;
+    padding: 0.6rem 1.25rem !important;
+    border-radius: 0.375rem;
+    border: 1px solid var(--accent);
+    transition: all 0.3s ease;
+    margin-left: 1rem;
+  }
+  
+  .contact-button:hover {
+    background-color: #2563eb;
+    border-color: #2563eb;
+    color: white !important;
+    transform: translateY(-1px);
+  }
+  
+  @media (max-width: 768px) {
+    .nav {
+      flex-direction: column;
+      gap: 1rem;
+      max-width: 100%;
+    }
+    
+    .logo-image {
+      width: 2.5em;
+      height: 2.5em;
+    }
+    
+    .nav-links {
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    
+    .contact-button {
+      padding: 0.5rem 1rem !important;
+      font-size: 0.9rem;
+      margin-left: 0.5rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .logo-container {
+      gap: 0.5rem;
+    }
+    
+    .nav-links {
+      gap: 1.25rem;
+    }
+    
+    .contact-button {
+      padding: 0.4rem 0.8rem !important;
+      font-size: 0.85rem;
+      margin-left: 0.25rem;
+    }
+  }
+</style>
+
+<script lang="ts">
+  document.addEventListener('DOMContentLoaded', () => {
+    const header = document.querySelector('.header');
+    const navLinks = document.querySelectorAll('.nav-link');
+    const logoLink = document.getElementById('logo-link');
+    
+    if (!header) return;
+
+    // Smooth scroll function
+    /**
+     * Smooth scroll to target element id.
+     * @param {string} targetId - CSS selector or hash id like '#about'
+     */
+    function smoothScroll(targetId) {
+      const targetElement = document.querySelector(targetId);
+      if (targetElement) {
+        const headerHeight = header.offsetHeight;
+        const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+        
+        window.scrollTo({
+          top: targetPosition,
+          behavior: 'smooth'
+        });
+      }
+    }
+
+    // Logo click - scroll to top
+    if (logoLink) {
+      logoLink.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      });
+    }
+
+    // Navigation links click
+    navLinks.forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const targetId = link.getAttribute('href');
+        
+        if (targetId === '#home') {
+          // Scroll to top for home
+          window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+          });
+        } else {
+          // Scroll to section for other links
+          smoothScroll(targetId);
+        }
+
+        // Update active class
+        navLinks.forEach(navLink => navLink.classList.remove('active'));
+        link.classList.add('active');
+      });
+    });
+
+    // Header background change on scroll
+    function updateHeaderBackground() {
+      const heroSection = document.querySelector('.hero');
+      if (heroSection) {
+        const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
+        
+        if (window.scrollY > heroBottom - 100) {
+          header.classList.add('scrolled');
+        } else {
+          header.classList.remove('scrolled');
+        }
+      } else {
+        // Fallback if no hero section found
+        if (window.scrollY > 100) {
+          header.classList.add('scrolled');
+        } else {
+          header.classList.remove('scrolled');
+        }
+      }
+    }
+
+    // Update active link based on scroll position
+    function updateActiveLink() {
+      const sections = document.querySelectorAll('section[id]');
+      const scrollPos = window.scrollY + 100;
+
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionBottom = sectionTop + section.offsetHeight;
+        const sectionId = section.getAttribute('id');
+        const correspondingLink = document.querySelector(`a[href="#${sectionId}"]`);
+
+        if (scrollPos >= sectionTop && scrollPos < sectionBottom && correspondingLink) {
+          navLinks.forEach(link => link.classList.remove('active'));
+          correspondingLink.classList.add('active');
+        }
+      });
+
+      // Home link active when at top
+      if (window.scrollY < 100) {
+        const homeLink = document.querySelector('a[href="#home"]');
+        if (homeLink) {
+          navLinks.forEach(link => link.classList.remove('active'));
+          homeLink.classList.add('active');
+        }
+      }
+    }
+
+    // Event listeners
+    window.addEventListener('scroll', () => {
+      updateHeaderBackground();
+      updateActiveLink();
+    });
+
+    // Initialize
+    updateHeaderBackground();
+    updateActiveLink();
+  });
+</script>

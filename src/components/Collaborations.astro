@@ -1,0 +1,340 @@
+---
+// src/components/Collaborations.astro
+---
+
+<section id="collaborations" class="collaborations">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Strategic Partners</h2>
+      <p class="section-subtitle">Driving innovation through high-impact research collaborations with federal agencies and industry leaders.</p>
+      <div class="title-line"></div>
+    </div>
+
+    <div class="collaborations-grid">
+      
+      <div class="collab-card nasa-card">
+        <div class="card-bg-layer"></div>
+        <div class="card-content">
+          <div class="card-top">
+            <div class="org-logo">
+              <span class="logo-emoji">🚀</span>
+            </div>
+            <div class="org-info">
+              <h3>NASA JPL</h3>
+              <p>Jet Propulsion Laboratory</p>
+            </div>
+          </div>
+          
+          <div class="project-summary">
+            <h4>Space Robotics Initiative</h4>
+            <p>Developing adhesion mechanisms for autonomous climbing robots on non-ferrous extraterrestrial surfaces.</p>
+          </div>
+
+          <div class="kpi-grid">
+            <div class="kpi">
+              <span class="kpi-val">2</span>
+              <span class="kpi-label">Years</span>
+            </div>
+            <div class="kpi">
+              <span class="kpi-val">3</span>
+              <span class="kpi-label">Papers</span>
+            </div>
+            <div class="kpi">
+              <span class="kpi-val">TRL 5</span>
+              <span class="kpi-label">Readiness</span>
+            </div>
+          </div>
+
+          <div class="tags">
+            <span>Micro-Gravity</span>
+            <span>Autonomy</span>
+          </div>
+          
+          <div class="status-badge">
+            <span class="pulse"></span>
+            Active Collaboration
+          </div>
+        </div>
+      </div>
+
+      <div class="collab-card erdc-card">
+        <div class="card-bg-layer"></div>
+        <div class="card-content">
+          <div class="card-top">
+            <div class="org-logo">
+              <span class="logo-emoji">🏰</span>
+            </div>
+            <div class="org-info">
+              <h3>US Army ERDC</h3>
+              <p>Engineer Research & Dev Center</p>
+            </div>
+          </div>
+          
+          <div class="project-summary">
+            <h4>Infrastructure Defense</h4>
+            <p>Engineered amphibious rovers for autonomous culvert inspection and structural health monitoring of civil works.</p>
+          </div>
+
+          <div class="kpi-grid">
+            <div class="kpi">
+              <span class="kpi-val">18</span>
+              <span class="kpi-label">Months</span>
+            </div>
+            <div class="kpi">
+              <span class="kpi-val">98%</span>
+              <span class="kpi-label">Accuracy</span>
+            </div>
+            <div class="kpi">
+              <span class="kpi-val">IP67</span>
+              <span class="kpi-label">Rating</span>
+            </div>
+          </div>
+
+          <div class="tags">
+            <span>Civil Robotics</span>
+            <span>Hydrology</span>
+          </div>
+
+          <div class="status-badge success">
+            <span class="pulse"></span>
+            Field Deployed
+          </div>
+        </div>
+      </div>
+
+      <div class="collab-card jfe-card">
+        <div class="card-bg-layer"></div>
+        <div class="card-content">
+          <div class="card-top">
+            <div class="org-logo">
+              <span class="logo-emoji">🏭</span>
+            </div>
+            <div class="org-info">
+              <h3>JFE Steel Corp</h3>
+              <p>Industrial Manufacturing</p>
+            </div>
+          </div>
+          
+          <div class="project-summary">
+            <h4>Industrial Inspection</h4>
+            <p>Deployed climbing robots for NDT thickness gauging on high-rise storage tanks and chimneys.</p>
+          </div>
+
+          <div class="kpi-grid">
+            <div class="kpi">
+              <span class="kpi-val">50+</span>
+              <span class="kpi-label">Tests</span>
+            </div>
+            <div class="kpi">
+              <span class="kpi-val">0</span>
+              <span class="kpi-label">Incidents</span>
+            </div>
+            <div class="kpi">
+              <span class="kpi-val">$20k</span>
+              <span class="kpi-label">Saved/Day</span>
+            </div>
+          </div>
+
+          <div class="tags">
+            <span>Industrial IoT</span>
+            <span>NDT</span>
+          </div>
+
+          <div class="status-badge success">
+            <span class="pulse"></span>
+            Production Ready
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="impact-dashboard">
+      <div class="impact-item">
+        <div class="impact-icon">💰</div>
+        <div class="impact-data">
+          <span class="impact-num">$110k+</span>
+          <span class="impact-label">Research Funding</span>
+        </div>
+      </div>
+      
+      <div class="impact-divider"></div>
+      
+      <div class="impact-item">
+        <div class="impact-icon">🌍</div>
+        <div class="impact-data">
+          <span class="impact-num">2</span>
+          <span class="impact-label">Continents</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<style>
+  .collaborations {
+    padding: 6rem 0;
+    background: #0f1117;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Dynamic Background */
+  .collaborations::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: radial-gradient(circle at 50% 50%, rgba(59, 130, 246, 0.05) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    position: relative; z-index: 2;
+  }
+
+  /* Header */
+  .section-header { text-align: center; margin-bottom: 4rem; }
+  .section-title {
+    font-size: 3rem; font-weight: 700;
+    background: linear-gradient(135deg, #fff 0%, #a5b4fc 100%);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  }
+  .section-subtitle { color: #94a3b8; margin-top: 1rem; }
+  .title-line { width: 80px; height: 4px; background: #3b82f6; margin: 1.5rem auto; border-radius: 2px; }
+
+  /* Grid */
+  .collaborations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 5rem;
+  }
+
+  /* --- HOLOGRAPHIC CARD --- */
+  .collab-card {
+    position: relative;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 1.5rem;
+    padding: 2rem;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    backdrop-filter: blur(10px);
+  }
+
+  .collab-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(59, 130, 246, 0.3);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  }
+
+  /* Animated Gradient Background on Hover */
+  .card-bg-layer {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(135deg, rgba(255,255,255,0.03) 0%, transparent 100%);
+    opacity: 0; transition: opacity 0.4s ease;
+  }
+  .collab-card:hover .card-bg-layer { opacity: 1; }
+
+  /* Specific Card Glows */
+  .nasa-card:hover .card-bg-layer { background: radial-gradient(circle at top right, rgba(59, 130, 246, 0.15), transparent 60%); }
+  .erdc-card:hover .card-bg-layer { background: radial-gradient(circle at top right, rgba(16, 185, 129, 0.15), transparent 60%); } /* Green for Army/Engineering */
+  .jfe-card:hover .card-bg-layer { background: radial-gradient(circle at top right, rgba(245, 158, 11, 0.15), transparent 60%); } /* Orange for Industry */
+
+  /* Content Layout */
+  .card-content { position: relative; z-index: 2; height: 100%; display: flex; flex-direction: column; }
+
+  .card-top { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; }
+  .logo-emoji { font-size: 2.5rem; background: rgba(255,255,255,0.05); padding: 0.5rem; border-radius: 12px; }
+  
+  .org-info h3 { font-size: 1.2rem; color: white; margin: 0; font-weight: 700; }
+  .org-info p { font-size: 0.8rem; color: #94a3b8; margin: 0; text-transform: uppercase; letter-spacing: 0.05em; }
+
+  .project-summary { margin-bottom: 1.5rem; flex-grow: 1; }
+  .project-summary h4 { color: #e2e8f0; font-size: 1rem; margin-bottom: 0.5rem; }
+  .project-summary p { color: #94a3b8; font-size: 0.9rem; line-height: 1.5; }
+
+  /* KPI Grid */
+  .kpi-grid {
+    display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.5rem;
+    margin-bottom: 1.5rem; background: rgba(0,0,0,0.2); border-radius: 12px; padding: 0.8rem;
+  }
+  .kpi { text-align: center; }
+  .kpi-val { display: block; color: white; font-weight: 700; font-size: 1.1rem; }
+  .kpi-label { display: block; color: #64748b; font-size: 0.7rem; text-transform: uppercase; }
+
+  /* Tags */
+  .tags { display: flex; gap: 0.5rem; margin-bottom: 1.5rem; }
+  .tags span {
+    font-size: 0.75rem; color: #cbd5e1; background: rgba(255,255,255,0.05);
+    padding: 0.2rem 0.6rem; border-radius: 4px; border: 1px solid rgba(255,255,255,0.1);
+  }
+
+  /* Status Badge */
+  .status-badge {
+    margin-top: auto; display: inline-flex; align-items: center; gap: 0.5rem;
+    font-size: 0.8rem; font-weight: 600; color: #60a5fa;
+    background: rgba(59, 130, 246, 0.1); padding: 0.4rem 0.8rem; border-radius: 20px;
+    align-self: flex-start;
+  }
+  .status-badge.success { color: #34d399; background: rgba(52, 211, 153, 0.1); }
+
+  .pulse {
+    width: 8px; height: 8px; background: currentColor; border-radius: 50%;
+    box-shadow: 0 0 0 rgba(255,255,255, 0.4);
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(currentColor, 0.4); }
+    70% { box-shadow: 0 0 0 6px rgba(currentColor, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(currentColor, 0); }
+  }
+
+  /* --- IMPACT DASHBOARD --- */
+  .impact-dashboard {
+    display: flex; justify-content: center; align-items: center; gap: 4rem;
+    background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05);
+    border-radius: 2rem; padding: 2rem; margin-bottom: 2rem;
+    backdrop-filter: blur(10px);
+    max-width: 800px; margin: 0 auto 4rem;
+  }
+  
+  .impact-item { display: flex; align-items: center; gap: 1rem; }
+  .impact-icon { font-size: 2.5rem; }
+  .impact-num { display: block; font-size: 2.5rem; font-weight: 800; color: white; line-height: 1; }
+  .impact-label { color: #94a3b8; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em; }
+  .impact-divider { width: 1px; height: 50px; background: rgba(255,255,255,0.1); }
+
+  /* Responsive */
+  @media (max-width: 900px) {
+    .impact-dashboard { flex-direction: column; gap: 2rem; align-items: center; text-align: center; }
+    .impact-divider { display: none; }
+    .impact-item { flex-direction: column; gap: 0.5rem; }
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    // Simple fade-in observer
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.collab-card').forEach((el, i) => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(20px)';
+      el.style.transition = `all 0.6s ease ${i * 0.1}s`; // Stagger effect
+      observer.observe(el);
+    });
+  });
+</script>
