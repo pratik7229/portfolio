@@ -5,58 +5,86 @@ const projectCategories = [
   {
     id: "climbing",
     title: "Climbing Robots",
-    subtitle: "Vertical Inspection Systems",
-    video: "/portfolio/CB_robot.mp4", 
+    subtitle: "Steel Structure Inspection",
+    coverVideo: "/portfolio/CB_robot.mp4", 
     icon: "🧗‍♂️",
     subProjects: [
       {
         id: "ironman",
-        name: "IronMan",
-        tagline: "Bipedal Magnetic Climber",
-        description: "A biologically inspired bipedal climbing robot designed for complex steel bridge inspection. The system utilizes a custom gait generation algorithm to transition between flat and vertical surfaces without external support.",
-        impact: ["Zero-radius turning capability", "15kg Vertical Payload", "Custom PCB Mainboard"],
-        tech: ["STM32 Firmware", "Inverse Kinematics", "SolidWorks", "KiCad"]
+        name: "IronMan Climbing Robot",
+        tagline: "Bicycle-Style Magnetic NDT Inspector",
+        description: "A static-wheelbase magnetic climbing robot engineered for non-destructive testing (NDT) of steel structures. Capable of traversing flanges >45mm in gravity-opposing orientations, the system features a custom probe deployment mechanism and a pump-pressurized couplant delivery system to facilitate ultrasonic inspections using an Elcometer MTG8BDL.",       
+        media: "/portfolio/IronMan.mp4", 
+        github: null,
+        youtube: "https://youtu.be/ap3aAc9zmO4?si=CqsCP1pg3CBCu_yu",
+        impact: [
+                "100m Telemetry Range (ESP-NOW)",
+                "Automated Couplant & Probe Deployment",
+                "Custom Miniaturized ESP32 Architecture",
+                "FEA Validated Chassis (Von Mises)"
+                ],
+        tech: ["ESP-IDF", "Orange Pi Zero 2W", ".NET & Python", "SolidWorks", "EasyEDA Pro"]
       },
       {
         id: "spidey",
-        name: "Spidey",
-        tagline: "Multi-Limbed Inspection Bot",
-        description: "Quadruped climbing robot capable of transitioning between floor and wall surfaces using nonlinear model predictive control (NMPC) for stability on vertical planes.",
-        impact: ["Real-time NMPC @ 100Hz", "Omnidirectional Movement", "Adhesion Redundancy"],
-        tech: ["ROS 2 Humble", "Gait Analysis", "Fusion 360", "C++"]
+        name: "Spidey Climbing Robot",
+        tagline: "Miniaturized Bicycle-Style Inspection Robot",
+        description: "A compact evolution of the Ironman architecture, this bicycle-style magnetic climber is engineered for constrained structural inspection. It retains full NDT integration while reducing the physical footprint to traverse steel flanges as narrow as 25mm in gravity-opposing orientations.",        
+        media: "/portfolio/SpideyA.mp4",
+        github: null,
+        youtube: "https://youtu.be/ap3aAc9zmO4?si=CqsCP1pg3CBCu_yu",
+        impact: [
+          "100m Telemetry Range (ESP-NOW)",
+          "Automated Couplant & Probe Deployment",
+          "Custom Miniaturized ESP32 Architecture",
+          "FEA Validated Chassis (Von Mises)"
+        ],
+        tech: ["ESP-IDF", "Orange Pi Zero 2W", ".NET & Python", "SolidWorks", "EasyEDA Pro"]
       },
       {
-        id: "morpho",
+       id: "morpho",
         name: "Morpho Climber",
-        tagline: "Shape-Shifting Platform",
-        description: "A modular climbing robot with compliant joints allowing it to navigate over irregular weld beads and rivets on industrial tanks by altering its chassis geometry.",
-        impact: ["Traverses 20mm Obstacles", "Adaptive Adhesion", "Modular Design"],
-        tech: ["Soft Robotics", "Adaptive Control", "Python"]
-      }
+        tagline: "Advanced Control Magnetic Climber (R&D)",
+        description: "A high-precision magnetic climbing robot currently under development, utilizing Active Disturbance Rejection Control (ADRC) and torque optimization to govern adhesion physics. Engineered for extreme geometric constraints, the system is designed to traverse steel flanges narrower than 10mm in any spatial orientation, including inverted surfaces.",        
+        media: "/portfolio/MorphoC.mp4",
+        github: null, 
+        youtube: null,
+        impact: [
+          "Sub-10mm Flange Traversal",
+          "MIMO-ADRC Stability Formulation",
+          "Gravity-Independent Maneuverability"
+        ],
+        tech: ["Active Disturbance Rejection Control", "Convex Optimization", "Euler-Lagrange Dynamics", "Embedded C++"]      }
     ]
   },
   {
     id: "aerial",
     title: "Aerial Robots",
     subtitle: "UAVs & Flight Control",
-    video: "/portfolio/Cube.mp4",
+    coverVideo: "/portfolio/Cube.mp4",
     icon: "🚁",
     subProjects: [
       {
         id: "fc",
         name: "Custom Flight Controller",
         tagline: "Hardware & Firmware from Scratch",
-        description: "Designed and manufactured a custom Flight Controller PCB based on STM32H7. Wrote the attitude estimation (EKF) and PID control loops from scratch in C++ without using Ardupilot libraries.",
-        impact: ["4-Layer PCB Design", "400Hz Loop Frequency", "< 2 deg Drift"],
-        tech: ["Altium Designer", "Embedded C++", "Control Theory", "EKF Design"]
+        description: "Designed and manufactured a custom Flight Controller PCB based on STM32 Blue Pill. Wrote the attitude estimation (EKF) and PID control loops from scratch.",
+        media: "/portfolio/fc_test.mp4",
+        github: null,
+        youtube: null,
+        impact: ["250Hz Loop Frequency", "< 2 deg Drift", "Custom PCB"],
+        tech: ["Altium Designer", "Embedded C++", "EKF Design"]
       },
       {
         id: "cube",
         name: "Cube Drone",
-        tagline: "Omnidirectional UAV",
-        description: "A unique cubic drone frame design allowing for 6-DOF movement, optimized for inspecting tight indoor spaces where traditional drones cannot rotate safely.",
-        impact: ["6-DOF Independence", "Collision Tolerant Frame", "Indoor Stabilization"],
-        tech: ["Generative Design", "Betaflight", "3D Printing", "Carbon Fiber"]
+        tagline: "All-Terrain Multi-Modal Inspection UAV",
+        description: "A 10-rotor hybrid platform engineered for civil infrastructure inspection across all physical domains. The system features a CNC-machined Cast Nylon and Carbon Fiber frame capable of aerial flight, terrestrial roving, aquatic maneuvering, and static adhesion to walls or ceilings. It utilizes a Cube Orange controller with a custom fork of ArduCopter firmware to handle specialized climbing and contact-based NDT flight modes.",      
+        media: "/portfolio/CubeC.mp4",
+        github: null,
+        youtube: null,
+        impact: ["Multi-Modal (Air/Land/Water)", "Custom ArduPilot Fork", "CNC Frame"],
+        tech: ["ArduCopter", "Cube Orange", "CNC Machining"]
       }
     ]
   },
@@ -64,16 +92,30 @@ const projectCategories = [
     id: "mobile",
     title: "Mobile Robots",
     subtitle: "UGVs & Navigation",
-    video: "/portfolio/Culvert.mp4",
+    coverVideo: "/portfolio/Culvert.mp4",
     icon: "🚗",
     subProjects: [
       {
         id: "culvert",
         name: "Culvert Inspector",
-        tagline: "Confined Space Explorer",
-        description: "An amphibious rover designed to inspect drainage culverts. Features a waterproof chassis and SLAM-based navigation for GPS-denied environments.",
-        impact: ["IP67 Waterproofing", "Lidar-Inertial Odometry", "2 Hours Runtime"],
-        tech: ["LiDAR SLAM", "Jetson Nano", "Path Planning", "System Integration"]
+        tagline: "Autonomous Assessment UGV",
+        description: "Specialized UGV for NDT of concrete culverts via electro-resistivity sensing. Employs POMDP for autonomous navigation in GPS-denied environments.",
+        media: "/portfolio/Culvert.mp4",
+        github: null,
+        youtube: "https://youtu.be/5Cc-_ZGTyGs?si=d2cpW9iEcHVzIQ6f",
+        impact: ["Autonomous Decision Making", "Resistivity Profiling", "Sensor Fusion"],
+        tech: ["Ouster 128 LiDAR", "POMDP Algorithm", "Jetson Nano"]
+      },
+      {
+        id: "docbot",
+        name: "CarryO Bot",
+        tagline: "Autonomous Intra-Logistics Courier",
+        description: "Autonomous indoor mobile robot (AMR) for secure document transport. Uses a heterogeneous stack (Jetson + Teensy) for SLAM and real-time control.",
+        media: "/portfolio/Docbot.mp4",
+        github: "https://github.com/pratik7229/office_robot",
+        youtube: "https://youtube.com/shorts/S7ZSq7Eqfz8",
+        impact: ["Graph-Based 2D SLAM", "Heterogeneous Compute", "Trajectory Opt."],
+        tech: ["ROS Navigation", "Google Cartographer", "Teensy 4.0"]
       }
     ]
   },
@@ -81,17 +123,107 @@ const projectCategories = [
     id: "ai",
     title: "AI & Deep Learning",
     subtitle: "Perception Systems",
-    video: "/ai.mp4",
+    coverVideo: "/ai.mp4",
     icon: "🧠",
     subProjects: [
       {
-        id: "dl-repo",
-        name: "Deep Learning Projects",
-        tagline: "Computer Vision Repository",
-        description: "A collection of advanced models including YOLOv8 for defect detection, crack segmentation, and reinforcement learning agents for navigation.",
-        impact: ["98.5% Detection Accuracy", "Real-time Inference", "Custom Dataset"],
-        tech: ["PyTorch", "TensorFlow", "Computer Vision", "CUDA"]
-      }
+    id: "gesture-blur",
+    name: "Image Blurring Using Hand Gesture",
+    tagline: "Real-Time Adaptive Optics",
+    description: "A computer vision interface that dynamically adjusts optical blur based on hand geometry using MediaPipe. It calculates the distance between the thumb and index finger to control the blurriness level of the camera feed in real-time.",
+    media: null,
+    github: "https://github.com/pratik7229/Deep-Learning_projects/tree/main/Image_Bluring_Using_Hand_Gesture",
+    youtube: null,
+    impact: [
+      "Touchless Interface",
+      "Dynamic Depth Control",
+      "Interactive CV Application"
+    ],
+    tech: [
+      "MediaPipe",
+      "OpenCV",
+      "Python",
+      "NumPy"
+    ]
+      },
+      {
+        id: "finger-counter",
+        name: "Finger Counter",
+        tagline: "Gestural Input Foundation",
+        description: "A fundamental computer vision project that implements contour analysis to count fingers raised in a video feed. It serves as a baseline for complex hand-tracking systems.",
+        media: "/portfolio/finger_counter.mp4",
+        github: "https://github.com/pratik7229/Deep-Learning_projects/tree/main/Fingure_Counter_Using_Computer_Vision",
+        youtube: null,
+        impact: [
+          "Contour Analysis",
+        "Gesture Recognition Basics",
+        "Real-Time Processing"
+        ],
+    tech: [
+      "OpenCV",
+      "Python",
+      "NumPy"
+    ]
+      },
+      {
+        id: "license-plate-ocr",
+        name: "License Plate Recognition",
+        tagline: "Automated Vehicle Identification",
+        description: "An optical character recognition system utilizing EasyOCR to extract license plate numbers from both static images and video streams. Designed for efficiency in automated data extraction tasks.",
+        media: "/portfolio/license_plate.mp4",
+        github: "https://github.com/pratik7229/Deep-Learning_projects/tree/main/License_Plate_Recognition",
+        youtube: null,
+        impact: [
+      "Automated OCR",
+      "Stream & Static Support",
+      "High Accuracy Text Extraction"
+    ],
+    tech: [
+      "EasyOCR",
+      "OpenCV",
+      "Python"
+    ]
+  },
+  {
+    id: "nn-scratch",
+    name: "Neural Network From Scratch",
+    tagline: "Bare-Metal Deep Learning",
+    description: "A foundational deep learning implementation built without high-level libraries like TensorFlow. It reconstructs backpropagation and model training steps using pure linear algebra to demonstrate core principles.",
+    media: "/portfolio/nn_scratch.mp4",
+    github: "https://github.com/pratik7229/Deep-Learning_projects/tree/main/neural_network_from_scratch",
+    youtube: null,
+    impact: [
+      "Mathematical First Principles",
+      "No Framework Dependencies",
+      "Algorithmic Transparency"
+    ],
+    tech: [
+      "Linear Algebra",
+      "Calculus",
+      "NumPy",
+      "Python"
+    ]
+  },
+  {
+    id: "virtual-gym-assistant",
+    name: "Virtual Gym Assistant",
+    tagline: "AI-Powered Fitness Tracker",
+    description: "A fitness monitoring application that harnesses MediaPipe to detect body landmarks. It specifically tracks bicep curl repetitions in real-time to assist users in maintaining exercise form.",
+    media: "/portfolio/gym_assistant.mp4",
+    github: "https://github.com/pratik7229/Deep-Learning_projects/tree/main/Virtual_Gym_Assistant",
+    youtube: null,
+    impact: [
+      "Pose Estimation",
+      "Automated Activity Tracking",
+      "Health Tech Integration"
+    ],
+    tech: [
+      "MediaPipe",
+      "Computer Vision",
+      "Python"
+    ]
+  }
+
     ]
   }
 ];
@@ -100,8 +232,8 @@ const projectCategories = [
 <section id="projects" class="projects-section">
   <div class="container">
     <div class="section-header">
-      <h2 class="section-title">Engineering Portfolio</h2>
-      <p class="section-subtitle">Select a domain to explore technical breakdowns and key engineering achievements.</p>
+      <h2 class="section-title">Robotics & AI Projects</h2>
+      <p class="section-subtitle">A collection of autonomous systems, NDT solutions, and perception algorithms.</p>
       <div class="title-line"></div>
     </div>
 
@@ -115,9 +247,9 @@ const projectCategories = [
               loop 
               playsinline 
               class="card-video"
-              poster="/erdc .png" 
+              poster="/portfolio/erdc .png" 
             >
-              <source src={category.video} type="video/mp4" />
+              <source src={category.coverVideo} type="video/mp4" />
             </video>
             <div class="video-overlay"></div>
           </div>
@@ -155,11 +287,15 @@ const projectCategories = [
 
         <div class="modal-details">
           <div class="detail-header">
-            <h3 id="detailName">Select a Project</h3>
-            <span class="detail-tagline" id="detailTagline"></span>
+            <h3 id="detailName">Project Name</h3>
+            <span class="detail-tagline" id="detailTagline">Tagline</span>
           </div>
           
           <div class="detail-body">
+            
+            <div class="action-buttons" id="actionButtons">
+                </div>
+
             <p id="detailDesc">Description goes here...</p>
             
             <div class="tech-section" id="detailTechContainer">
@@ -168,9 +304,8 @@ const projectCategories = [
             </div>
 
             <div class="impact-section">
-                <h4>Key Engineering Achievements</h4>
-                <div class="impact-grid" id="impactGrid">
-                    </div>
+                <h4>Key Achievements</h4>
+                <div class="impact-grid" id="impactGrid"></div>
             </div>
 
           </div>
@@ -307,11 +442,11 @@ const projectCategories = [
     overflow: hidden; box-shadow: 0 50px 100px rgba(0,0,0,0.5);
   }
 
-  /* MODAL BACKGROUND VIDEO (UPDATED) */
+  /* --- MODAL BACKGROUND VIDEO (UPDATED) --- */
   .modal-bg-wrapper {
     position: absolute;
     top: 0; right: 0; bottom: 0;
-    width: 70%; /* Covers more area */
+    width: 80%; /* CHANGED: Now covers 80% of the modal width from the right */
     z-index: 0;
     overflow: hidden;
     pointer-events: none;
@@ -319,14 +454,21 @@ const projectCategories = [
 
   .modal-bg-video {
     width: 100%; height: 100%; object-fit: cover;
-    opacity: 0.8; /* HIGH VISIBILITY */
-    filter: brightness(1.0); /* Full brightness */
+    opacity: 0.8; 
+    filter: brightness(1.0); 
+    transition: opacity 0.5s ease-in-out; 
   }
 
   .modal-bg-gradient {
     position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-    /* Gradient mask: Solid dark on left, fading to transparent on right */
-    background: linear-gradient(to right, #151726 15%, rgba(21, 23, 38, 0.9) 45%, rgba(21, 23, 38, 0.2) 100%);
+    /* CHANGED: Gradient logic to merge the 80% video into the 20% background */
+    /* Starts solid dark on the left edge of the video wrapper, fades to transparent */
+    background: linear-gradient(to right, 
+      #151726 0%,              /* Seamless blend with sidebar */
+      #151726 10%,             /* Solid buffer */
+      rgba(21, 23, 38, 0.8) 30%, /* Aggressive fade start */
+      rgba(21, 23, 38, 0.2) 100% /* Transparent end */
+    );
   }
 
   /* SIDEBAR */
@@ -371,10 +513,26 @@ const projectCategories = [
     background: transparent;
   }
   
-  .detail-header { margin-bottom: 2rem; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 1rem; }
+  .detail-header { margin-bottom: 1.5rem; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 1rem; }
   .detail-header h3 { font-size: 2.5rem; color: white; margin-bottom: 0.5rem; text-shadow: 0 2px 10px rgba(0,0,0,0.8); }
   .detail-tagline { font-size: 1.2rem; color: #60a5fa; font-family: monospace; font-weight: 600; text-shadow: 0 2px 4px rgba(0,0,0,0.8); }
   
+  .action-buttons {
+    display: flex; gap: 1rem; margin-bottom: 2rem;
+  }
+  .btn-link {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    padding: 0.6rem 1.2rem; border-radius: 6px;
+    font-size: 0.9rem; font-weight: 600; text-decoration: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .btn-link:hover { transform: translateY(-2px); box-shadow: 0 5px 15px rgba(0,0,0,0.3); }
+  
+  .btn-github { background: #24292e; color: white; border: 1px solid rgba(255,255,255,0.2); }
+  .btn-youtube { background: #ef4444; color: white; }
+  .btn-github:hover { background: #000; }
+  .btn-youtube:hover { background: #dc2626; }
+
   .detail-body p { color: #f1f5f9; font-size: 1.1rem; line-height: 1.7; margin-bottom: 2.5rem; max-width: 90%; text-shadow: 0 1px 3px rgba(0,0,0,0.9); }
 
   /* Tech Stack */
@@ -407,7 +565,6 @@ const projectCategories = [
     .modal-sidebar { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.1); padding: 1rem; max-height: 25vh; }
     .modal-details { padding: 1.5rem; }
     .section-title { font-size: 2rem; }
-    /* Hide video on mobile to save performance */
     .modal-bg-wrapper { display: none; }
   }
 </style>
@@ -428,6 +585,7 @@ const projectCategories = [
     const detailDesc = document.getElementById('detailDesc');
     const detailTech = document.getElementById('detailTech');
     const impactGrid = document.getElementById('impactGrid');
+    const actionButtons = document.getElementById('actionButtons');
     
     const data = window.projectData;
 
@@ -437,11 +595,6 @@ const projectCategories = [
 
       modalTitle.textContent = category.title;
       subProjectList.innerHTML = '';
-
-      if (modalBgVideo) {
-        modalBgVideo.src = category.video;
-        modalBgVideo.play();
-      }
 
       category.subProjects.forEach((sub, index) => {
         const btn = document.createElement('button');
@@ -469,12 +622,40 @@ const projectCategories = [
       const detailBody = document.querySelector('.detail-body');
       detailBody.style.opacity = '0';
       detailBody.style.transform = 'translateY(10px)';
-      detailBody.style.transition = 'all 0.3s ease';
+      
+      if (modalBgVideo) {
+          modalBgVideo.style.opacity = '0'; 
+          setTimeout(() => {
+              if (sub.media) {
+                  modalBgVideo.src = sub.media;
+                  modalBgVideo.play();
+              }
+              modalBgVideo.style.opacity = '0.8'; 
+          }, 400); 
+      }
 
       setTimeout(() => {
         detailName.textContent = sub.name;
         detailTagline.textContent = sub.tagline;
         detailDesc.textContent = sub.description;
+        
+        actionButtons.innerHTML = '';
+        if (sub.github) {
+            const ghBtn = document.createElement('a');
+            ghBtn.href = sub.github;
+            ghBtn.target = "_blank";
+            ghBtn.className = "btn-link btn-github";
+            ghBtn.innerHTML = `<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg> Source Code`;
+            actionButtons.appendChild(ghBtn);
+        }
+        if (sub.youtube) {
+            const ytBtn = document.createElement('a');
+            ytBtn.href = sub.youtube;
+            ytBtn.target = "_blank";
+            ytBtn.className = "btn-link btn-youtube";
+            ytBtn.innerHTML = `<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/></svg> Watch Demo`;
+            actionButtons.appendChild(ytBtn);
+        }
         
         detailTech.innerHTML = '';
         sub.tech.forEach(t => {
