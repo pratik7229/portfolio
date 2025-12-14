@@ -7,8 +7,8 @@
   <div class="video-background">
     <video class="background-video" autoplay muted playsinline>
       <source src="/portfolio/video.mp4" type="video/mp4">
-      <source src="/portfolio/video.webm" type="video/webm">
-      <img src="/portfolio/erdc .png" alt="Robotics background" />
+      <source src="/portfolio/SpideyA.webm" type="video/webm">
+      <img src="/portfolio/erdc.png" alt="Robotics background" />
     </video>
     <div class="video-blend"></div>
   </div>
@@ -19,7 +19,7 @@
       <p class="hero-subtitle">Developing AI-driven robotic solutions that automate complex inspection, navigation, and decision-making tasks.</p>
       <div class="hero-actions">
         <a href="#projects" class="btn btn-primary">View My Work</a>
-        <a href="/portfolio/resume.pdf" download="Pratik_Walunj_Resume.pdf" class="btn btn-outline">Download Resume</a>
+        <a href="/portfolio/resume.pdf" download="Robotics_Resume_2025.pdf" class="btn btn-outline">Download Resume</a>
       </div>
       
       <!-- Social Links -->
@@ -226,11 +226,6 @@
     opacity: 1;
   }
 
-  /* Download icon for resume button */
-  .btn-outline::before {
-    content: '📥';
-    font-size: 1.1em;
-  }
 
   /* Social Links Styles */
   .social-links {
@@ -358,28 +353,31 @@
 
 <script>
   document.addEventListener('DOMContentLoaded', () => {
-    // Video playlist functionality
-    const videoElement = document.querySelector('.background-video') as HTMLVideoElement | null;
+    const videoElement = document.querySelector('.background-video');
+    
+    // 1. FIX: Ensure paths match your HTML structure (added /portfolio/)
     const videoSources = [
-      { mp4: '/video.mp4', webm: '/video.webm' },
-      { mp4: '/video2.mp4', webm: '/video2.webm' },
-      { mp4: '/video3.mp4', webm: '/video3.webm' },
-      { mp4: '/video4.mp4', webm: '/video4.webm' }
+      { mp4: '/portfolio/video.mp4', webm: '/portfolio/video.webm' },
+      { mp4: '/portfolio/SpideyA.mp4', webm: '/portfolio/SpideyA.webm' },
+      { mp4: '/portfolio/Cube.mp4', webm: '/portfolio/Cube.webm' }
     ];
     
     let currentVideoIndex = 0;
+    let isTransitioning = false; // Prevent double-firing
 
     function playNextVideo() {
-      if (!videoElement) return;
+      if (!videoElement || isTransitioning) return;
+      isTransitioning = true;
+
+      // Calculate next index
       currentVideoIndex = (currentVideoIndex + 1) % videoSources.length;
       const nextVideo = videoSources[currentVideoIndex];
       
-      // Fade out current video
+      // Fade out
       videoElement.style.opacity = '0';
       
       setTimeout(() => {
-        if (!videoElement) return;
-        // Change video source
+        // Swap sources
         videoElement.innerHTML = '';
         
         const mp4Source = document.createElement('source');
@@ -390,75 +388,73 @@
         webmSource.src = nextVideo.webm;
         webmSource.type = 'video/webm';
         
-        // Fallback image
-        const fallbackImg = document.createElement('img');
-        fallbackImg.src = '/erdc .png';
-        fallbackImg.alt = 'Robotics background';
-        
         videoElement.appendChild(mp4Source);
         videoElement.appendChild(webmSource);
-        videoElement.appendChild(fallbackImg);
         
-        // Fade in new video
-        try {
-          if (typeof videoElement.load === 'function') videoElement.load();
-          if (typeof videoElement.play === 'function') {
-            videoElement.play().catch(e => console.log('Video play failed:', e));
-          }
-        } catch (e) {
-          console.log('Error when loading/playing video:', e);
+        // Load and Play
+        videoElement.load();
+        
+        const playPromise = videoElement.play();
+        
+        if (playPromise !== undefined) {
+          playPromise.then(() => {
+            // Fade in only after successful play
+            videoElement.style.opacity = '1';
+            isTransitioning = false;
+          }).catch(error => {
+            console.error("Auto-play prevented:", error);
+            // Even if it fails, reset transition lock so we can try again
+            isTransitioning = false; 
+          });
         }
-        videoElement.style.opacity = '1';
-      }, 1000);
+      }, 1000); // Wait for fade out to finish
     }
 
-    // Listen for video end and play next
     if (videoElement) {
+      // Event listener for when the video naturally ends
       videoElement.addEventListener('ended', playNextVideo);
       
-      // Also set up error handling
+      // Fallback: If video fails to load, skip to next
       videoElement.addEventListener('error', (e) => {
-        console.log('Video error, playing next:', e);
-        setTimeout(playNextVideo, 2000);
+        console.log('Video error, skipping...', e);
+        isTransitioning = false; // Reset lock
+        playNextVideo();
       });
     }
 
+    // ... (Keep your Smooth Scroll and Download Button logic here) ...
     // Smooth scroll for View My Work button
     const viewWorkBtn = document.querySelector('a[href="#projects"]');
     if (viewWorkBtn) {
       viewWorkBtn.addEventListener('click', (e) => {
-      e.preventDefault();
-      const projectsSection = document.querySelector('#projects') as HTMLElement | null;
-      if (projectsSection) {
-        const headerEl = document.querySelector('.header') as HTMLElement | null;
-        const headerHeight = headerEl?.offsetHeight ?? 80;
-
-        // Use getBoundingClientRect for an accurate position and subtract header height
-        const rect = projectsSection.getBoundingClientRect();
-        const targetPosition = rect.top + window.pageYOffset - headerHeight;
-
-        window.scrollTo({
-        top: Math.max(0, Math.round(targetPosition)),
-        behavior: 'smooth'
-        });
-      }
+        e.preventDefault();
+        const projectsSection = document.querySelector('#projects');
+        if (projectsSection) {
+          const headerEl = document.querySelector('.header');
+          const headerHeight = headerEl?.offsetHeight ?? 80;
+          const rect = projectsSection.getBoundingClientRect();
+          const targetPosition = rect.top + window.pageYOffset - headerHeight;
+          window.scrollTo({
+            top: Math.max(0, Math.round(targetPosition)),
+            behavior: 'smooth'
+          });
+        }
       });
     }
 
     // Download resume button enhancement
-        const downloadBtn = document.querySelector('a[download]');
-        if (downloadBtn) {
-          downloadBtn.addEventListener('click', (e) => {
-            // Add download confirmation animation
-            const target = e.target as Element | null;
-            const btn = target?.closest('.btn') as HTMLElement | null;
-            if (btn) {
-              btn.style.transform = 'scale(0.95)';
-              setTimeout(() => {
-                btn.style.transform = '';
-              }, 150);
-            }
-          });
+    const downloadBtn = document.querySelector('a[download]');
+    if (downloadBtn) {
+      downloadBtn.addEventListener('click', (e) => {
+        const target = e.target;
+        const btn = target?.closest('.btn');
+        if (btn) {
+          btn.style.transform = 'scale(0.95)';
+          setTimeout(() => {
+            btn.style.transform = '';
+          }, 150);
         }
+      });
+    }
   });
 </script>
