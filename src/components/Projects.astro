@@ -121,9 +121,9 @@ const projectCategories = [
         tagline: "Autonomous Intra-Logistics Courier",
         description: "Autonomous indoor mobile robot (AMR) for secure document transport. Uses a heterogeneous stack (Jetson + Teensy) for SLAM and real-time control.",
         media: "/portfolio/Docbot.mp4",
-        github: "https://github.com/pratik7229/office_robot",
+        github: null,
         youtube: "https://youtube.com/shorts/S7ZSq7Eqfz8",
-        impact: ["Graph-Based 2D SLAM", "Heterogeneous Compute", "Trajectory Opt."],
+        impact: ["2D SLAM", "Heterogeneous Compute"],
         tech: ["ROS Navigation", "Cartographer", "Teensy 4.0"]
       },
       {
@@ -146,7 +146,28 @@ const projectCategories = [
     coverVideo: "/ai.mp4",
     icon: "🧠",
     subProjects: [
-      {
+    {
+      id: "dashcam-crash-prediction",
+      name: "Dashcam Crash Prediction",
+      tagline: "Proactive Collision Anticipation",
+      description: "A computer vision and deep learning system for predicting potential vehicle collisions from dashcam video. The project processes real-world driving footage to identify risk patterns and anticipate accidents before they occur, leveraging spatiotemporal analysis of video sequences.",
+      media: null,
+      github: "https://github.com/pratik7229/Dashcam-Crash-Prediction",
+      youtube: null,
+      impact: [
+        "Accident Anticipation",
+        "Spatiotemporal Video Analysis",
+        "Real-Time Risk Assessment"
+      ],
+      tech: [
+        "Python",
+        "OpenCV",
+        "Deep Learning",
+        "Computer Vision",
+        "Ensemble Learning"
+      ]
+    }, 
+    {
     id: "gesture-blur",
     name: "Gesture Controllerd Image Processing",
     tagline: "Real-Time Adaptive Optics",
