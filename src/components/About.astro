@@ -19,7 +19,7 @@
         <div class="profile-card">
           <!-- Profile Image -->
           <div class="image-container">
-            <img src="/portfolio/photo1.png" alt="Pratik Walunj - Robotics Engineer" class="profile-image" />
+            <img src="/portfolio/photo1.1.png" alt="Pratik Walunj - Robotics Engineer" class="profile-image" />
             <div class="image-glow"></div>
           </div>
           
@@ -508,7 +508,8 @@
                 <span class="skill-tag">Control Systems (ADRC, PID, Real-Time Control Implementation)</span>
                 <span class="skill-tag">Robotics Middleware (ROS 2, Micro-ROS)</span>
                 <span class="skill-tag">Robotic System Design (End-to-End Architecture & Integration)</span>
-                <span class="skill-tag">Autonomous Robotics Systems (Perception, Localization, Planning, Control)</span>
+                <span class="skill-tag">Autonomous Robotics Systems (Perception, Localization, Planning, Control)
+              </span>
 
               </div>
               </div>
@@ -991,12 +992,14 @@
   }
 
 .profile-image {
-  width: 100%;
-  height: 100%;
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
-  object-position: center top;
-}
+    width: 100%;
+    height: auto;
+    object-fit: contain;   /* prevents cropping */
+    aspect-ratio: auto;    /* remove forced square */
+    object-fit: cover;
+    object-position: top center; /* Ensures the face/head isn't cut off if cropping occurs */
+    transition: transform 0.3s ease;
+  }
 
   .image-glow {
     position: absolute;
