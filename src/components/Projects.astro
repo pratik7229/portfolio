@@ -20,8 +20,7 @@ const projectCategories = [
         impact: [
                 "100m Telemetry Range (ESP-NOW)",
                 "Automated Couplant & Probe Deployment",
-                "Custom Miniaturized ESP32 Architecture",
-                "FEA Validated Chassis (Von Mises)"
+                "Custom Miniaturized ESP32 Architecture",      
                 ],
         tech: ["ESP-IDF", "Orange Pi Zero 2W", ".NET & Python", "SolidWorks", "EasyEDA Pro"]
       },
@@ -37,7 +36,6 @@ const projectCategories = [
           "100m Telemetry Range (ESP-NOW)",
           "Automated Couplant & Probe Deployment",
           "Custom Miniaturized ESP32 Architecture",
-          "FEA Validated Chassis (Von Mises)"
         ],
         tech: ["ESP-IDF", "Orange Pi Zero 2W", ".NET & Python", "SolidWorks", "EasyEDA Pro"]
       },
@@ -54,7 +52,7 @@ const projectCategories = [
           "MIMO-ADRC Stability Formulation",
           "Gravity-Independent Maneuverability"
         ],
-        tech: ["Active Disturbance Rejection Control", "Convex Optimization", "Euler-Lagrange Dynamics", "Embedded C++"]      }
+        tech: ["Active Disturbance Rejection Control", "ESP-IDF", "RP2040-SDK", "ESP-Now"]      }
     ]
   },
   {
@@ -69,22 +67,22 @@ const projectCategories = [
         name: "Custom Flight Controller",
         tagline: "Hardware & Firmware from Scratch",
         description: "Designed and manufactured a custom Flight Controller PCB based on STM32 Blue Pill. Wrote the attitude estimation (EKF) and PID control loops from scratch.",
-        media: "/portfolio/fc_test.mp4",
+        media: null,
         github: null,
         youtube: null,
         impact: ["250Hz Loop Frequency", "< 2 deg Drift", "Custom PCB"],
-        tech: ["Altium Designer", "Embedded C++", "EKF Design"]
+        tech: ["Easy EDA Pro", "PID Control", "Teensy 4.1"]
       },
       {
         id: "DroneDelivery",
         name: "Drone Delivery",
         tagline: "Gazebo Simulation & ROS Integration",
         description: "Designed and simulated a fully autonomous aerial delivery system within the Gazebo environment. The project features a custom path planning architecture that navigates drones between designated pickup and delivery zones. To ensure reliable operations, I integrated a computer vision pipeline using OpenCV that identifies landing markers and executes precision alignment maneuvers. Flight stability was achieved through a custom-tuned PID control loop, facilitating smooth transitions between high-speed navigation and precision hovering modes.",
-        media: "/portfolio/DroneDel.mp4",
+        media: null,
         github: null,
         youtube: "https://youtu.be/9Kf0IER6nHg",
         impact: ["100Hz Loop Frequency", "Autonomous Path Planning", "ROS Integration"],
-        tech: ["Gazebo", "ROS", "PID Control" , "OpenCV"]
+        tech: ["Gazebo", "ROS", "PID Control" , "OpenCV", "Cascade Classifier"]
       },
       {
         id: "cube",
@@ -94,7 +92,7 @@ const projectCategories = [
         media: "/portfolio/CubeC.mp4",
         github: null,
         youtube: null,
-        impact: ["Multi-Modal (Air/Land/Water)", "Custom ArduPilot Fork", "CNC Frame"],
+        impact: ["Multi-Modal (Air/Land/Water)", "Custom ArduPilot Fork"],
         tech: ["ArduCopter", "Cube Orange", "CNC Machining"]
       }
     ]
@@ -110,8 +108,7 @@ const projectCategories = [
         id: "culvert",
         name: "Culvert Inspector",
         tagline: "Autonomous Assessment UGV",
-        description: "Specialized UGV for NDT of concrete culverts via electro-resistivity sensing. Employs POMDP for autonomous navigation in GPS-denied environments.",
-        media: "/portfolio/Culvert.mp4",
+        description: "Developed a specialized UGV for non-destructive testing (NDT) of concrete culverts using electrical resistivity sensing for structural condition assessment. Designed the complete robotic system from scratch in SolidWorks and implemented sensor drivers for electro-resistivity measurement. Integrated a perception and localization stack using Ouster LiDAR, Lucid PoE cameras, and Luxonis OAK-D Pro for robust inspection in confined environments."        media: "/portfolio/Culvert.mp4",
         github: null,
         youtube: "https://youtu.be/5Cc-_ZGTyGs?si=d2cpW9iEcHVzIQ6f",
         impact: ["Autonomous Decision Making", "Resistivity Profiling", "Sensor Fusion"],
@@ -126,7 +123,7 @@ const projectCategories = [
         github: "https://github.com/pratik7229/office_robot",
         youtube: "https://youtube.com/shorts/S7ZSq7Eqfz8",
         impact: ["Graph-Based 2D SLAM", "Heterogeneous Compute", "Trajectory Opt."],
-        tech: ["ROS Navigation", "Google Cartographer", "Teensy 4.0"]
+        tech: ["ROS Navigation", "Cartographer", "Teensy 4.0"]
       },
       {
         id: "AgriBot",
@@ -137,7 +134,7 @@ const projectCategories = [
         github: null,
         youtube: "https://youtu.be/HNp4__I3Rsg",
         impact: ["Autonomous Harvesting Pipeline", "Collision-Aware Trajectory Generation"],
-        tech: ["MoveIt Motion Planning Framework", "OMPL", "Rviz"]
+        tech: ["MoveIt Motion Planning Framework", "Rviz", "Gazebo"]
       }
     ]
   },
